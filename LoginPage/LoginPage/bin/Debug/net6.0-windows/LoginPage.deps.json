@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "LoginPage/1.0.0": {
         "dependencies": {
+          "ChatApplication": "1.0.0",
           "Guna.UI2.WinForms": "2.0.3.5",
           "MESSAGE": "1.0.0"
         },
@@ -21,6 +22,14 @@
             "assemblyVersion": "2.0.3.5",
             "fileVersion": "2.0.3.5"
           }
+        }
+      },
+      "ChatApplication/1.0.0": {
+        "dependencies": {
+          "Guna.UI2.WinForms": "2.0.3.5"
+        },
+        "runtime": {
+          "ChatApplication.dll": {}
         }
       },
       "MESSAGE/1.0.0": {
@@ -42,6 +51,11 @@
       "sha512": "sha512-nd6IAGX4u+sCx9i6PeBfkb6Y+xoayIsoMhndlJoN1L5kE6QbYjDMSHiF+9/nkFhcKx+eNaXzemyKbCY4W7lBEA==",
       "path": "guna.ui2.winforms/2.0.3.5",
       "hashPath": "guna.ui2.winforms.2.0.3.5.nupkg.sha512"
+    },
+    "ChatApplication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "MESSAGE/1.0.0": {
       "type": "project",

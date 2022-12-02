@@ -11,6 +11,22 @@
           "lib/net40/Guna.UI2.dll": {}
         }
       },
+      "ChatApplication/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "guna.ui2.winforms": "2.0.3.5"
+        },
+        "compile": {
+          "bin/placeholder/ChatApplication.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ChatApplication.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "MESSAGE/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -38,6 +54,11 @@
         "lib/net40/Guna.UI2.dll"
       ]
     },
+    "ChatApplication/1.0.0": {
+      "type": "project",
+      "path": "../../ChatApplication/ChatApplication.csproj",
+      "msbuildProject": "../../ChatApplication/ChatApplication.csproj"
+    },
     "MESSAGE/1.0.0": {
       "type": "project",
       "path": "../../MESSAGE/MESSAGE.csproj",
@@ -46,6 +67,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "ChatApplication >= 1.0.0",
       "Guna.UI2.WinForms >= 2.0.3.5",
       "MESSAGE >= 1.0.0"
     ]
@@ -77,6 +99,9 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
+            "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj": {
+              "projectPath": "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj"
+            },
             "D:\\Study\\chatApp\\MESSAGE\\MESSAGE.csproj": {
               "projectPath": "D:\\Study\\chatApp\\MESSAGE\\MESSAGE.csproj"
             }

@@ -2,6 +2,7 @@
 using Guna.UI2.Material.Animation;
 using Guna.UI2.WinForms;
 using MESSAGE;
+using ChatApplication;
 namespace LoginPage
 {
     public partial class Form1 : Form
@@ -31,10 +32,16 @@ namespace LoginPage
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-
             pn_login.Visible = true;
             msg_pn.Visible = false;
             guna2Transition1.ShowSync(pn_login);
+        }
+
+        private void login_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ChatApplication.Form1 form = new ChatApplication.Form1();
+            form.Show();
         }
     }
 }
