@@ -39,8 +39,9 @@ namespace LoginPage
 
         private void login_Click(object sender, EventArgs e)
         {
-            this.Hide();
             ChatApplication.Form1 form = new ChatApplication.Form1();
+            this.Hide();
+            guna2Transition1.Show(form);
             form.Show();
         }
     }

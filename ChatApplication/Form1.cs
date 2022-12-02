@@ -21,5 +21,12 @@ namespace ChatApplication
         {
             Application.Exit();
         }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form frm = Application.OpenForms["Form1"];
+            frm.Show();
+        }
     }
 }
