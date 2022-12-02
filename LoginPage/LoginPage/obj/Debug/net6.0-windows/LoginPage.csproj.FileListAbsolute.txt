@@ -18,3 +18,5 @@ D:\Study\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.pdb
 D:\Study\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.genruntimeconfig.cache
 D:\Study\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\ref\LoginPage.dll
 D:\Study\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.Properties.Resources.resources
+D:\Study\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\MESSAGE.dll
+D:\Study\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\MESSAGE.pdb
