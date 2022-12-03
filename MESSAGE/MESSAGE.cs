@@ -20,6 +20,19 @@
         public string? username { get; set; }
         public string? pass { get; set; }
     }
+
+    public class USER
+    {
+        public USER(string? username, string? password, string? name)
+        {
+            this.username = username;
+            this.password = password;
+            this.name = name;
+        }
+        public string? username { get; set; }
+        public string? password { get; set; }
+        public string? name { get; set; }
+    }
     public class MESSAGE
     {
         public MESSAGE(string? usernameSender, string? usernameReceiver, string? content)

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj": {}
+    "D:\\code\\C#\\project\\chat\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj": {}
   },
   "projects": {
-    "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj": {
+    "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj",
+        "projectUniqueName": "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj",
         "projectName": "ChatApplication",
-        "projectPath": "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj",
-        "packagesPath": "C:\\Users\\dinhd\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\chatApp\\ChatApplication\\obj\\",
+        "projectPath": "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj",
+        "packagesPath": "C:\\Users\\vyvul\\.nuget\\packages\\",
+        "outputPath": "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\software\\visual studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\dinhd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vyvul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,17 +72,21 @@
         }
       }
     },
-    "D:\\Study\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj": {
+    "D:\\code\\C#\\project\\chat\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj",
+        "projectUniqueName": "D:\\code\\C#\\project\\chat\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj",
         "projectName": "LoginPage",
-        "projectPath": "D:\\Study\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj",
-        "packagesPath": "C:\\Users\\dinhd\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\chatApp\\LoginPage\\LoginPage\\obj\\",
+        "projectPath": "D:\\code\\C#\\project\\chat\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj",
+        "packagesPath": "C:\\Users\\vyvul\\.nuget\\packages\\",
+        "outputPath": "D:\\code\\C#\\project\\chat\\chatApp\\LoginPage\\LoginPage\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\software\\visual studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\dinhd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vyvul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,11 +100,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj": {
-                "projectPath": "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj"
+              "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj": {
+                "projectPath": "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj"
               },
-              "D:\\Study\\chatApp\\MESSAGE\\MESSAGE.csproj": {
-                "projectPath": "D:\\Study\\chatApp\\MESSAGE\\MESSAGE.csproj"
+              "D:\\code\\C#\\project\\chat\\chatApp\\MESSAGE\\MESSAGE.csproj": {
+                "projectPath": "D:\\code\\C#\\project\\chat\\chatApp\\MESSAGE\\MESSAGE.csproj"
               }
             }
           }
@@ -139,17 +147,21 @@
         }
       }
     },
-    "D:\\Study\\chatApp\\MESSAGE\\MESSAGE.csproj": {
+    "D:\\code\\C#\\project\\chat\\chatApp\\MESSAGE\\MESSAGE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\chatApp\\MESSAGE\\MESSAGE.csproj",
+        "projectUniqueName": "D:\\code\\C#\\project\\chat\\chatApp\\MESSAGE\\MESSAGE.csproj",
         "projectName": "MESSAGE",
-        "projectPath": "D:\\Study\\chatApp\\MESSAGE\\MESSAGE.csproj",
-        "packagesPath": "C:\\Users\\dinhd\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\chatApp\\MESSAGE\\obj\\",
+        "projectPath": "D:\\code\\C#\\project\\chat\\chatApp\\MESSAGE\\MESSAGE.csproj",
+        "packagesPath": "C:\\Users\\vyvul\\.nuget\\packages\\",
+        "outputPath": "D:\\code\\C#\\project\\chat\\chatApp\\MESSAGE\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\software\\visual studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\dinhd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vyvul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -174,6 +186,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

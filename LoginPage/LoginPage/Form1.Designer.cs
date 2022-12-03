@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pn_login = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.login = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pn_regis = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtUser_re = new System.Windows.Forms.TextBox();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pass_re = new System.Windows.Forms.TextBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.pn_login = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.UserName = new System.Windows.Forms.TextBox();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.Pass = new System.Windows.Forms.TextBox();
+            this.login = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.msg_pn = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,14 +64,14 @@
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel2.SuspendLayout();
-            this.pn_login.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pn_regis.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
+            this.pn_login.SuspendLayout();
+            this.guna2Panel4.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.msg_pn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -99,118 +99,6 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(335, 666);
             this.guna2Panel2.TabIndex = 2;
-            // 
-            // pn_login
-            // 
-            this.pn_login.Controls.Add(this.guna2Panel4);
-            this.pn_login.Controls.Add(this.guna2Panel3);
-            this.pn_login.Controls.Add(this.login);
-            this.pn_login.Controls.Add(this.guna2Button2);
-            this.guna2Transition1.SetDecoration(this.pn_login, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pn_login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.pn_login.Location = new System.Drawing.Point(32, 235);
-            this.pn_login.Name = "pn_login";
-            this.pn_login.Size = new System.Drawing.Size(271, 353);
-            this.pn_login.TabIndex = 2;
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
-            this.guna2Panel4.BorderRadius = 10;
-            this.guna2Panel4.BorderThickness = 2;
-            this.guna2Panel4.Controls.Add(this.textBox3);
-            this.guna2Transition1.SetDecoration(this.guna2Panel4, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Panel4.Location = new System.Drawing.Point(13, 27);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(246, 45);
-            this.guna2Panel4.TabIndex = 6;
-            // 
-            // textBox3
-            // 
-            this.textBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.guna2Transition1.SetDecoration(this.textBox3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(8, 11);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "Email";
-            this.textBox3.Size = new System.Drawing.Size(229, 22);
-            this.textBox3.TabIndex = 1;
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
-            this.guna2Panel3.BorderRadius = 10;
-            this.guna2Panel3.BorderThickness = 2;
-            this.guna2Panel3.Controls.Add(this.textBox2);
-            this.guna2Transition1.SetDecoration(this.guna2Panel3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Panel3.Location = new System.Drawing.Point(13, 110);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(246, 45);
-            this.guna2Panel3.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.guna2Transition1.SetDecoration(this.textBox2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(8, 11);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "Password";
-            this.textBox2.Size = new System.Drawing.Size(229, 22);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.UseSystemPasswordChar = true;
-            // 
-            // login
-            // 
-            this.login.Animated = true;
-            this.login.BackColor = System.Drawing.Color.Transparent;
-            this.login.BorderRadius = 10;
-            this.guna2Transition1.SetDecoration(this.login, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.login.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.login.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.login.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
-            this.login.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.login.ForeColor = System.Drawing.Color.White;
-            this.login.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
-            this.login.Location = new System.Drawing.Point(13, 206);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(114, 45);
-            this.login.TabIndex = 4;
-            this.login.Text = "Đăng nhập";
-            this.login.UseTransparentBackground = true;
-            this.login.Click += new System.EventHandler(this.login_Click);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.BorderThickness = 2;
-            this.guna2Transition1.SetDecoration(this.guna2Button2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
-            this.guna2Button2.Location = new System.Drawing.Point(145, 206);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(114, 45);
-            this.guna2Button2.TabIndex = 4;
-            this.guna2Button2.Text = "Đăng ký";
-            this.guna2Button2.UseTransparentBackground = true;
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // pictureBox1
             // 
@@ -257,79 +145,79 @@
             this.guna2Panel7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.guna2Panel7.BorderRadius = 10;
             this.guna2Panel7.BorderThickness = 2;
-            this.guna2Panel7.Controls.Add(this.textBox1);
+            this.guna2Panel7.Controls.Add(this.txtname);
             this.guna2Transition1.SetDecoration(this.guna2Panel7, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel7.Location = new System.Drawing.Point(13, 18);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Size = new System.Drawing.Size(246, 45);
             this.guna2Panel7.TabIndex = 6;
             // 
-            // textBox1
+            // txtname
             // 
-            this.textBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.guna2Transition1.SetDecoration(this.textBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(8, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Họ và tên";
-            this.textBox1.Size = new System.Drawing.Size(229, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtname.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.txtname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.txtname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.guna2Transition1.SetDecoration(this.txtname, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtname.ForeColor = System.Drawing.Color.White;
+            this.txtname.Location = new System.Drawing.Point(8, 11);
+            this.txtname.Name = "txtname";
+            this.txtname.PlaceholderText = "Họ và tên";
+            this.txtname.Size = new System.Drawing.Size(229, 22);
+            this.txtname.TabIndex = 1;
             // 
             // guna2Panel9
             // 
             this.guna2Panel9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.guna2Panel9.BorderRadius = 10;
             this.guna2Panel9.BorderThickness = 2;
-            this.guna2Panel9.Controls.Add(this.textBox5);
+            this.guna2Panel9.Controls.Add(this.txtUser_re);
             this.guna2Transition1.SetDecoration(this.guna2Panel9, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel9.Location = new System.Drawing.Point(13, 87);
             this.guna2Panel9.Name = "guna2Panel9";
             this.guna2Panel9.Size = new System.Drawing.Size(246, 45);
             this.guna2Panel9.TabIndex = 6;
             // 
-            // textBox5
+            // txtUser_re
             // 
-            this.textBox5.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.guna2Transition1.SetDecoration(this.textBox5, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(8, 11);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PlaceholderText = "Email";
-            this.textBox5.Size = new System.Drawing.Size(229, 22);
-            this.textBox5.TabIndex = 1;
+            this.txtUser_re.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.txtUser_re.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.txtUser_re.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.guna2Transition1.SetDecoration(this.txtUser_re, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtUser_re.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUser_re.ForeColor = System.Drawing.Color.White;
+            this.txtUser_re.Location = new System.Drawing.Point(8, 11);
+            this.txtUser_re.Name = "txtUser_re";
+            this.txtUser_re.PlaceholderText = "Username";
+            this.txtUser_re.Size = new System.Drawing.Size(229, 22);
+            this.txtUser_re.TabIndex = 1;
             // 
             // guna2Panel8
             // 
             this.guna2Panel8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.guna2Panel8.BorderRadius = 10;
             this.guna2Panel8.BorderThickness = 2;
-            this.guna2Panel8.Controls.Add(this.textBox4);
+            this.guna2Panel8.Controls.Add(this.pass_re);
             this.guna2Transition1.SetDecoration(this.guna2Panel8, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel8.Location = new System.Drawing.Point(13, 156);
             this.guna2Panel8.Name = "guna2Panel8";
             this.guna2Panel8.Size = new System.Drawing.Size(246, 45);
             this.guna2Panel8.TabIndex = 6;
             // 
-            // textBox4
+            // pass_re
             // 
-            this.textBox4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.guna2Transition1.SetDecoration(this.textBox4, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(8, 11);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PlaceholderText = "Password";
-            this.textBox4.Size = new System.Drawing.Size(229, 22);
-            this.textBox4.TabIndex = 1;
-            this.textBox4.UseSystemPasswordChar = true;
+            this.pass_re.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.pass_re.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.pass_re.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.guna2Transition1.SetDecoration(this.pass_re, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pass_re.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pass_re.ForeColor = System.Drawing.Color.White;
+            this.pass_re.Location = new System.Drawing.Point(8, 11);
+            this.pass_re.Name = "pass_re";
+            this.pass_re.PlaceholderText = "Password";
+            this.pass_re.Size = new System.Drawing.Size(229, 22);
+            this.pass_re.TabIndex = 1;
+            this.pass_re.UseSystemPasswordChar = true;
             // 
             // guna2Button3
             // 
@@ -352,6 +240,118 @@
             this.guna2Button3.Text = "Tạo tài khoản";
             this.guna2Button3.UseTransparentBackground = true;
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
+            // pn_login
+            // 
+            this.pn_login.Controls.Add(this.guna2Panel4);
+            this.pn_login.Controls.Add(this.guna2Panel3);
+            this.pn_login.Controls.Add(this.login);
+            this.pn_login.Controls.Add(this.guna2Button2);
+            this.guna2Transition1.SetDecoration(this.pn_login, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pn_login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.pn_login.Location = new System.Drawing.Point(32, 238);
+            this.pn_login.Name = "pn_login";
+            this.pn_login.Size = new System.Drawing.Size(271, 353);
+            this.pn_login.TabIndex = 2;
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.guna2Panel4.BorderRadius = 10;
+            this.guna2Panel4.BorderThickness = 2;
+            this.guna2Panel4.Controls.Add(this.UserName);
+            this.guna2Transition1.SetDecoration(this.guna2Panel4, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Panel4.Location = new System.Drawing.Point(13, 27);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(246, 45);
+            this.guna2Panel4.TabIndex = 6;
+            // 
+            // UserName
+            // 
+            this.UserName.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.UserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.UserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.guna2Transition1.SetDecoration(this.UserName, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.UserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UserName.ForeColor = System.Drawing.Color.White;
+            this.UserName.Location = new System.Drawing.Point(8, 11);
+            this.UserName.Name = "UserName";
+            this.UserName.PlaceholderText = "Username";
+            this.UserName.Size = new System.Drawing.Size(229, 22);
+            this.UserName.TabIndex = 1;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.guna2Panel3.BorderRadius = 10;
+            this.guna2Panel3.BorderThickness = 2;
+            this.guna2Panel3.Controls.Add(this.Pass);
+            this.guna2Transition1.SetDecoration(this.guna2Panel3, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Panel3.Location = new System.Drawing.Point(13, 110);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(246, 45);
+            this.guna2Panel3.TabIndex = 6;
+            // 
+            // Pass
+            // 
+            this.Pass.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.Pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.guna2Transition1.SetDecoration(this.Pass, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Pass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Pass.ForeColor = System.Drawing.Color.White;
+            this.Pass.Location = new System.Drawing.Point(8, 11);
+            this.Pass.Name = "Pass";
+            this.Pass.PlaceholderText = "Password";
+            this.Pass.Size = new System.Drawing.Size(229, 22);
+            this.Pass.TabIndex = 1;
+            this.Pass.UseSystemPasswordChar = true;
+            // 
+            // login
+            // 
+            this.login.Animated = true;
+            this.login.BackColor = System.Drawing.Color.Transparent;
+            this.login.BorderRadius = 10;
+            this.guna2Transition1.SetDecoration(this.login, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.login.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.login.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.login.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.login.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.login.ForeColor = System.Drawing.Color.White;
+            this.login.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
+            this.login.Location = new System.Drawing.Point(13, 206);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(114, 45);
+            this.login.TabIndex = 4;
+            this.login.Text = "Đăng nhập";
+            this.login.UseTransparentBackground = true;
+            this.login.Click += new System.EventHandler(this.login_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Animated = true;
+            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.guna2Button2.BorderRadius = 10;
+            this.guna2Button2.BorderThickness = 2;
+            this.guna2Transition1.SetDecoration(this.guna2Button2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
+            this.guna2Button2.Location = new System.Drawing.Point(145, 206);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(114, 45);
+            this.guna2Button2.TabIndex = 4;
+            this.guna2Button2.Text = "Đăng ký";
+            this.guna2Button2.UseTransparentBackground = true;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Panel1
             // 
@@ -465,22 +465,22 @@
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
             this.guna2Transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
-            this.guna2Transition1.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 1F;
+            this.guna2Transition1.DefaultAnimation = animation2;
             this.guna2Transition1.Interval = 30;
             // 
             // guna2MessageDialog1
@@ -511,11 +511,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.guna2Panel2.ResumeLayout(false);
-            this.pn_login.ResumeLayout(false);
-            this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pn_regis.ResumeLayout(false);
             this.pn_regis.PerformLayout();
@@ -525,6 +520,11 @@
             this.guna2Panel9.PerformLayout();
             this.guna2Panel8.ResumeLayout(false);
             this.guna2Panel8.PerformLayout();
+            this.pn_login.ResumeLayout(false);
+            this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel4.PerformLayout();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.msg_pn.ResumeLayout(false);
             this.msg_pn.PerformLayout();
@@ -540,11 +540,11 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button login;
-        private TextBox textBox2;
+        private TextBox Pass;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private TextBox textBox3;
+        private TextBox UserName;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
@@ -555,11 +555,11 @@
         private Guna.UI2.WinForms.Guna2Panel pn_regis;
         private Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private TextBox textBox1;
+        private TextBox txtname;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
-        private TextBox textBox5;
+        private TextBox txtUser_re;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private TextBox textBox4;
+        private TextBox pass_re;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
