@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xxbb3wRN4R+Y5qgxWsrV/NGPY4WUadczF40lsCVvZdcs192aGnec2VTyqo325QAzvgWJOt0SWr6RlTGhcSshcQ==",
+  "dgSpecHash": "H6J398q0sT7tOuxYHH0TPj57Ub5mfgt8fXZb9L2aBnusny63yWYlf/buudPEsPtxZfdfMEc8wyPkTsOf2UaimQ==",
   "success": true,
-  "projectFilePath": "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj",
+  "projectFilePath": "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\vyvul\\.nuget\\packages\\guna.ui2.winforms\\2.0.3.5\\guna.ui2.winforms.2.0.3.5.nupkg.sha512"
+    "C:\\Users\\dinhd\\.nuget\\packages\\guna.ui2.winforms\\2.0.3.5\\guna.ui2.winforms.2.0.3.5.nupkg.sha512"
   ],
   "logs": [
     {

@@ -19,7 +19,6 @@ namespace LoginPage
         Socket server;
         Socket client;
         bool thoat = false;
-        Boolean check = false;
         Thread trd;
         public Form1()
         {
@@ -52,16 +51,9 @@ namespace LoginPage
                     {
                        
                        // MessageBox.Show("Login success!");
-                       check= true;
                         ChatApplication.Form1 form = new ChatApplication.Form1();
-                        //Application.Hide(this);
                         this.Invoke((MethodInvoker)(() => this.Hide()));
-                        guna2Transition1.Show(form);
                         Application.Run(form);
-
-
-
-
                         //ChangeAttribute(Connect, false);
                         //ChangeAttribute(Logout, true);
                         while (!thoat)
@@ -173,7 +165,7 @@ namespace LoginPage
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             // msg_pn.Visible = true;//////
-            iep = new IPEndPoint(IPAddress.Parse("172.19.200.227"), int.Parse("2008"));
+            iep = new IPEndPoint(IPAddress.Parse("172.19.200.81"), int.Parse("2008"));
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             client.Connect(iep);
             ThreadRegister();
@@ -188,21 +180,12 @@ namespace LoginPage
 
         private void login_Click(object sender, EventArgs e)
         {
-            iep = new IPEndPoint(IPAddress.Parse("172.19.200.227"), int.Parse("2008"));
+            iep = new IPEndPoint(IPAddress.Parse("172.19.200.81"), int.Parse("2008"));
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             client.Connect(iep);
             trd = new Thread(new ThreadStart(this.ThreadTask));
             trd.IsBackground = true;
             trd.Start();
-
-            
-            //if(check)
-            //{
-            //    ChatApplication.Form1 form = new ChatApplication.Form1();
-            //    this.Hide();
-            //    guna2Transition1.Show(form);
-            //    form.Show();
-            //}    
         }
     }
 }

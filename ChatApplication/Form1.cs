@@ -1,3 +1,6 @@
+using Guna.UI2.WinForms;
+using System.Reflection.Emit;
+
 namespace ChatApplication
 {
     public partial class Form1 : Form
@@ -19,14 +22,15 @@ namespace ChatApplication
 
         private void closeBox_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Form frm = Application.OpenForms["Form1"];
+            frm.Invoke((MethodInvoker)(() => frm.Close()));
         }
 
         private void logout_Click(object sender, EventArgs e)
         {
             this.Close();
             Form frm = Application.OpenForms["Form1"];
-            frm.Show();
+            frm.Invoke((MethodInvoker)(() => frm.Show()));
         }
     }
 }

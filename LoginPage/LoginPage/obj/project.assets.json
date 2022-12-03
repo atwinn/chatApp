@@ -534,24 +534,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vyvul\\.nuget\\packages\\": {},
-    "D:\\software\\visual studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\dinhd\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\code\\C#\\project\\chat\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj",
+      "projectUniqueName": "D:\\Study\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj",
       "projectName": "LoginPage",
-      "projectPath": "D:\\code\\C#\\project\\chat\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj",
-      "packagesPath": "C:\\Users\\vyvul\\.nuget\\packages\\",
-      "outputPath": "D:\\code\\C#\\project\\chat\\chatApp\\LoginPage\\LoginPage\\obj\\",
+      "projectPath": "D:\\Study\\chatApp\\LoginPage\\LoginPage\\LoginPage.csproj",
+      "packagesPath": "C:\\Users\\dinhd\\.nuget\\packages\\",
+      "outputPath": "D:\\Study\\chatApp\\LoginPage\\LoginPage\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\software\\visual studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\vyvul\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\dinhd\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -565,11 +560,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj": {
-              "projectPath": "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj"
+            "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj": {
+              "projectPath": "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj"
             },
-            "D:\\code\\C#\\project\\chat\\chatApp\\MESSAGE\\MESSAGE.csproj": {
-              "projectPath": "D:\\code\\C#\\project\\chat\\chatApp\\MESSAGE\\MESSAGE.csproj"
+            "D:\\Study\\chatApp\\MESSAGE\\MESSAGE.csproj": {
+              "projectPath": "D:\\Study\\chatApp\\MESSAGE\\MESSAGE.csproj"
             }
           }
         }

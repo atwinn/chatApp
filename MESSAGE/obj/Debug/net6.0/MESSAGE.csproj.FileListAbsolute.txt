@@ -34,3 +34,15 @@ D:\code\C#\project\chat\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.dll
 D:\code\C#\project\chat\chatApp\MESSAGE\obj\Debug\net6.0\refint\MESSAGE.dll
 D:\code\C#\project\chat\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.pdb
 D:\code\C#\project\chat\chatApp\MESSAGE\obj\Debug\net6.0\ref\MESSAGE.dll
+D:\Study\chatApp\MESSAGE\bin\Debug\net6.0\MESSAGE.deps.json
+D:\Study\chatApp\MESSAGE\bin\Debug\net6.0\MESSAGE.dll
+D:\Study\chatApp\MESSAGE\bin\Debug\net6.0\MESSAGE.pdb
+D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.csproj.AssemblyReference.cache
+D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.AssemblyInfoInputs.cache
+D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.AssemblyInfo.cs
+D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.csproj.CoreCompileInputs.cache
+D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.dll
+D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\refint\MESSAGE.dll
+D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.pdb
+D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\ref\MESSAGE.dll
