@@ -158,6 +158,7 @@
             // 
             // guna2Button3
             // 
+            this.guna2Button3.Animated = true;
             this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button3.BorderRadius = 6;
             this.guna2Transition1.SetDecoration(this.guna2Button3, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -229,12 +230,12 @@
             // 
             // addGroupPanel
             // 
+            this.addGroupPanel.BackColor = System.Drawing.Color.Transparent;
             this.addGroupPanel.BorderRadius = 6;
             this.addGroupPanel.Controls.Add(this.guna2Button5);
             this.addGroupPanel.Controls.Add(this.guna2Panel6);
             this.addGroupPanel.Controls.Add(this.guna2Panel5);
             this.guna2Transition1.SetDecoration(this.addGroupPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.addGroupPanel.BackColor = System.Drawing.Color.Transparent;
             this.addGroupPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
             this.addGroupPanel.Location = new System.Drawing.Point(120, 163);
             this.addGroupPanel.Name = "addGroupPanel";
@@ -267,13 +268,13 @@
             // 
             // guna2Panel6
             // 
-            this.guna2Panel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.guna2Panel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel6.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Panel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.guna2Panel6.BorderRadius = 10;
             this.guna2Panel6.BorderThickness = 2;
             this.guna2Panel6.Controls.Add(this.textBox3);
             this.guna2Transition1.SetDecoration(this.guna2Panel6, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Panel6.FillColor = System.Drawing.Color.Transparent;
             this.guna2Panel6.Location = new System.Drawing.Point(22, 80);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(246, 45);
@@ -295,13 +296,13 @@
             // 
             // guna2Panel5
             // 
-            this.guna2Panel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.guna2Panel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Panel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.guna2Panel5.BorderRadius = 10;
             this.guna2Panel5.BorderThickness = 2;
             this.guna2Panel5.Controls.Add(this.textBox2);
             this.guna2Transition1.SetDecoration(this.guna2Panel5, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Panel5.FillColor = System.Drawing.Color.Transparent;
             this.guna2Panel5.Location = new System.Drawing.Point(22, 17);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(246, 45);
@@ -323,11 +324,11 @@
             // 
             // addChatPanel
             // 
+            this.addChatPanel.BackColor = System.Drawing.Color.Transparent;
             this.addChatPanel.BorderRadius = 6;
             this.addChatPanel.Controls.Add(this.guna2Button4);
             this.addChatPanel.Controls.Add(this.guna2Panel4);
             this.guna2Transition1.SetDecoration(this.addChatPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.addChatPanel.BackColor = System.Drawing.Color.Transparent;
             this.addChatPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
             this.addChatPanel.Location = new System.Drawing.Point(120, 193);
             this.addChatPanel.Name = "addChatPanel";
@@ -360,13 +361,13 @@
             // 
             // guna2Panel4
             // 
-            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.guna2Panel4.BorderRadius = 10;
             this.guna2Panel4.BorderThickness = 2;
             this.guna2Panel4.Controls.Add(this.userName_Send);
             this.guna2Transition1.SetDecoration(this.guna2Panel4, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Panel4.FillColor = System.Drawing.Color.Transparent;
             this.guna2Panel4.Location = new System.Drawing.Point(22, 17);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(246, 45);
