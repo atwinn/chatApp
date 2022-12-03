@@ -165,7 +165,7 @@ namespace LoginPage
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             // msg_pn.Visible = true;//////
-            iep = new IPEndPoint(IPAddress.Parse("172.20.10.5"), int.Parse("2008"));
+            iep = new IPEndPoint(IPAddress.Parse("192.168.0.195"), int.Parse("2008"));
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             client.Connect(iep);
             ThreadRegister();
@@ -180,7 +180,7 @@ namespace LoginPage
 
         private void login_Click(object sender, EventArgs e)
         {
-            iep = new IPEndPoint(IPAddress.Parse("172.20.10.5"), int.Parse("2008"));
+            iep = new IPEndPoint(IPAddress.Parse("192.168.0.195"), int.Parse("2008"));
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             client.Connect(iep);
             trd = new Thread(new ThreadStart(this.ThreadTask));
