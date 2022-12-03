@@ -71,6 +71,7 @@ namespace ChatApplication
                 label2.Size = new System.Drawing.Size(116, 25);
                 label2.TabIndex = 0;
                 label2.Text = "Vy Vũ Luân";
+                label2.Click += new System.EventHandler(this.userPn_Click);
                 //Hình hiển thị
                 guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
                 guna2Transition1.SetDecoration(guna2CirclePictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -84,6 +85,7 @@ namespace ChatApplication
                 guna2CirclePictureBox1.TabIndex = 1;
                 guna2CirclePictureBox1.TabStop = false;
                 guna2CirclePictureBox1.UseTransparentBackground = true;
+                guna2CirclePictureBox1.Click += new System.EventHandler(this.userPn_Click);
                 //Bộ khung
                 //userPn.BringToFront();
                 userPn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
@@ -99,7 +101,13 @@ namespace ChatApplication
                 userPn.Name = "userPn" + i.ToString();
                 userPn.Size = new System.Drawing.Size(215, 64);
                 userPn.TabIndex = 5;
+                userPn.Click += new System.EventHandler(this.userPn_Click);
             }
+        }
+
+        private void userPn_Click(object sender, System.EventArgs e)
+        {
+            chatPanel.Visible = true;
         }
 
         private void closeBox_Click(object sender, EventArgs e)
@@ -113,6 +121,50 @@ namespace ChatApplication
             this.Close();
             Form frm = Application.OpenForms["Form1"];
             frm.Invoke((MethodInvoker)(() => frm.Show()));
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if(addChatPanel.Visible == true)
+            {
+                addChatPanel.Visible = false;
+            } else if (chatPanel.Visible == true)
+            {
+                chatPanel.Visible = false;
+                addChatPanel.Visible = true;
+            } else
+            {
+                addChatPanel.Visible = true;
+            }
+            addChatPanel.BringToFront();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            addChatPanel.Visible = false;
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (addGroupPanel.Visible == true)
+            {
+                addGroupPanel.Visible = false;
+            }
+            else if (chatPanel.Visible == true)
+            {
+                chatPanel.Visible = false;
+                addGroupPanel.Visible = true;
+            }
+            else
+            {
+                addGroupPanel.Visible = true;
+            }
+            addGroupPanel.BringToFront();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            addGroupPanel.Visible = false;
         }
     }
 }

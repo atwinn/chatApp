@@ -20,6 +20,7 @@ namespace LoginPage
         Socket client;
         bool thoat = false;
         Thread trd;
+        private string ipAdd = "192.168.1.10";
         public Form1()
         {
             InitializeComponent();
@@ -165,7 +166,7 @@ namespace LoginPage
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             // msg_pn.Visible = true;//////
-            iep = new IPEndPoint(IPAddress.Parse("192.168.0.195"), int.Parse("2008"));
+            iep = new IPEndPoint(IPAddress.Parse(ipAdd), int.Parse("2008"));
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             client.Connect(iep);
             ThreadRegister();
@@ -180,7 +181,7 @@ namespace LoginPage
 
         private void login_Click(object sender, EventArgs e)
         {
-            iep = new IPEndPoint(IPAddress.Parse("192.168.0.195"), int.Parse("2008"));
+            iep = new IPEndPoint(IPAddress.Parse(ipAdd), int.Parse("2008"));
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             client.Connect(iep);
             trd = new Thread(new ThreadStart(this.ThreadTask));
