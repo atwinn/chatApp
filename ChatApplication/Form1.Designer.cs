@@ -33,11 +33,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.chattingUnPn = new Guna.UI2.WinForms.Guna2Panel();
+            this.chattingUN = new System.Windows.Forms.Label();
             this.chatPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.chatBoxPn = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.txtKQ = new System.Windows.Forms.TextBox();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.sendBtn = new Guna.UI2.WinForms.Guna2Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.closeBox = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -62,7 +65,9 @@
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1.SuspendLayout();
+            this.chattingUnPn.SuspendLayout();
             this.chatPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -83,6 +88,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.Controls.Add(this.chattingUnPn);
             this.guna2Panel1.Controls.Add(this.chatPanel);
             this.guna2Panel1.Controls.Add(this.guna2ControlBox2);
             this.guna2Panel1.Controls.Add(this.closeBox);
@@ -96,13 +102,38 @@
             this.guna2Panel1.Size = new System.Drawing.Size(780, 666);
             this.guna2Panel1.TabIndex = 1;
             // 
+            // chattingUnPn
+            // 
+            this.chattingUnPn.BackColor = System.Drawing.Color.Transparent;
+            this.chattingUnPn.Controls.Add(this.chattingUN);
+            this.guna2Transition1.SetDecoration(this.chattingUnPn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.chattingUnPn.Location = new System.Drawing.Point(10, 0);
+            this.chattingUnPn.Name = "chattingUnPn";
+            this.chattingUnPn.Size = new System.Drawing.Size(200, 33);
+            this.chattingUnPn.TabIndex = 9;
+            this.chattingUnPn.UseTransparentBackground = true;
+            this.chattingUnPn.Visible = false;
+            // 
+            // chattingUN
+            // 
+            this.chattingUN.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.chattingUN, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.chattingUN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chattingUN.ForeColor = System.Drawing.Color.White;
+            this.chattingUN.Location = new System.Drawing.Point(6, 6);
+            this.chattingUN.Name = "chattingUN";
+            this.chattingUN.Size = new System.Drawing.Size(140, 21);
+            this.chattingUN.TabIndex = 0;
+            this.chattingUN.Text = "Trần Hoàng Long";
+            // 
             // chatPanel
             // 
             this.chatPanel.BackColor = System.Drawing.Color.Transparent;
+            this.chatPanel.Controls.Add(this.chatBoxPn);
+            this.chatPanel.Controls.Add(this.guna2PictureBox5);
             this.chatPanel.Controls.Add(this.guna2PictureBox4);
             this.chatPanel.Controls.Add(this.guna2PictureBox3);
-            this.chatPanel.Controls.Add(this.txtKQ);
-            this.chatPanel.Controls.Add(this.guna2Button3);
+            this.chatPanel.Controls.Add(this.sendBtn);
             this.chatPanel.Controls.Add(this.textBox1);
             this.guna2Transition1.SetDecoration(this.chatPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.chatPanel.Location = new System.Drawing.Point(10, 35);
@@ -111,6 +142,29 @@
             this.chatPanel.TabIndex = 7;
             this.chatPanel.UseTransparentBackground = true;
             this.chatPanel.Visible = false;
+            // 
+            // chatBoxPn
+            // 
+            this.chatBoxPn.AutoScroll = true;
+            this.guna2Transition1.SetDecoration(this.chatBoxPn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.chatBoxPn.Location = new System.Drawing.Point(0, 0);
+            this.chatBoxPn.Name = "chatBoxPn";
+            this.chatBoxPn.Size = new System.Drawing.Size(761, 532);
+            this.chatBoxPn.TabIndex = 8;
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.guna2PictureBox5, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2PictureBox5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.Image = global::ChatApplication.Properties.Resources.smiling;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(82, 538);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(23, 35);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox5.TabIndex = 7;
+            this.guna2PictureBox5.TabStop = false;
             // 
             // guna2PictureBox4
             // 
@@ -140,42 +194,27 @@
             this.guna2PictureBox3.TabIndex = 7;
             this.guna2PictureBox3.TabStop = false;
             // 
-            // txtKQ
+            // sendBtn
             // 
-            this.txtKQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.txtKQ.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.guna2Transition1.SetDecoration(this.txtKQ, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.txtKQ.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtKQ.ForeColor = System.Drawing.Color.White;
-            this.txtKQ.Location = new System.Drawing.Point(0, 0);
-            this.txtKQ.Multiline = true;
-            this.txtKQ.Name = "txtKQ";
-            this.txtKQ.ReadOnly = true;
-            this.txtKQ.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtKQ.Size = new System.Drawing.Size(761, 536);
-            this.txtKQ.TabIndex = 4;
-            this.txtKQ.Text = "gửi nhận";
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderRadius = 6;
-            this.guna2Transition1.SetDecoration(this.guna2Button3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
-            this.guna2Button3.Location = new System.Drawing.Point(655, 577);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(106, 42);
-            this.guna2Button3.TabIndex = 6;
-            this.guna2Button3.Text = "Gửi tin nhắn";
-            this.guna2Button3.UseTransparentBackground = true;
+            this.sendBtn.Animated = true;
+            this.sendBtn.BackColor = System.Drawing.Color.Transparent;
+            this.sendBtn.BorderRadius = 6;
+            this.guna2Transition1.SetDecoration(this.sendBtn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.sendBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.sendBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.sendBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.sendBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.sendBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.sendBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sendBtn.ForeColor = System.Drawing.Color.White;
+            this.sendBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
+            this.sendBtn.Location = new System.Drawing.Point(655, 577);
+            this.sendBtn.Name = "sendBtn";
+            this.sendBtn.Size = new System.Drawing.Size(106, 42);
+            this.sendBtn.TabIndex = 6;
+            this.sendBtn.Text = "Gửi tin nhắn";
+            this.sendBtn.UseTransparentBackground = true;
+            this.sendBtn.Click += new System.EventHandler(this.sendBtn_Click);
             // 
             // textBox1
             // 
@@ -521,8 +560,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.guna2Panel1.ResumeLayout(false);
+            this.chattingUnPn.ResumeLayout(false);
+            this.chattingUnPn.PerformLayout();
             this.chatPanel.ResumeLayout(false);
             this.chatPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -558,9 +600,8 @@
         private PictureBox logout;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button sendBtn;
         private TextBox textBox1;
-        private TextBox txtKQ;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Panel chatPanel;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
@@ -575,5 +616,9 @@
         private TextBox textBox3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private TextBox textBox2;
+        private Guna.UI2.WinForms.Guna2Panel chatBoxPn;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private Guna.UI2.WinForms.Guna2Panel chattingUnPn;
+        private Label chattingUN;
     }
 }
