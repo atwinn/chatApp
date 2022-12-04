@@ -38,3 +38,23 @@ D:\code\C#\project\chat\chatApp\ChatApplication\obj\Debug\net6.0-windows\refint\
 D:\code\C#\project\chat\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.pdb
 D:\code\C#\project\chat\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.genruntimeconfig.cache
 D:\code\C#\project\chat\chatApp\ChatApplication\obj\Debug\net6.0-windows\ref\ChatApplication.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\bin\Debug\net6.0-windows\ChatApplication.exe
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\bin\Debug\net6.0-windows\ChatApplication.deps.json
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\bin\Debug\net6.0-windows\ChatApplication.runtimeconfig.json
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\bin\Debug\net6.0-windows\ChatApplication.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\bin\Debug\net6.0-windows\ChatApplication.pdb
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\bin\Debug\net6.0-windows\Guna.UI2.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.csproj.AssemblyReference.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.Form1.resources
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.Properties.Resources.resources
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.csproj.GenerateResource.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.AssemblyInfoInputs.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.AssemblyInfo.cs
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.csproj.CoreCompileInputs.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.csproj.CopyComplete
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\refint\ChatApplication.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.pdb
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ChatApplication.genruntimeconfig.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\ChatApplication\obj\Debug\net6.0-windows\ref\ChatApplication.dll

@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\vyvul\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\vyvul\\.nuget\\packages",
-      "D:\\software\\visual studio\\Shared\\NuGetPackages"
+      "C:\\Users\\Acer\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Acer\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

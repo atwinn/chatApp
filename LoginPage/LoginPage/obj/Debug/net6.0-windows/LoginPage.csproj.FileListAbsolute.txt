@@ -64,3 +64,36 @@ D:\Study\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\runtimes\win-x64\n
 D:\Study\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
 D:\Study\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Study\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\ChatApplication.deps.json
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\ChatApplication.runtimeconfig.json
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\ChatApplication.exe
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\LoginPage.exe
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\LoginPage.deps.json
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\LoginPage.runtimeconfig.json
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\LoginPage.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\LoginPage.pdb
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\Guna.UI2.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\ChatApplication.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\MESSAGE.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\ChatApplication.pdb
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\bin\Debug\net6.0-windows\MESSAGE.pdb
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.csproj.AssemblyReference.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.Form1.resources
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.Properties.Resources.resources
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.csproj.GenerateResource.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.AssemblyInfoInputs.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.AssemblyInfo.cs
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.csproj.CoreCompileInputs.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.csproj.CopyComplete
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\refint\LoginPage.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.pdb
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\LoginPage.genruntimeconfig.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\LoginPage\LoginPage\obj\Debug\net6.0-windows\ref\LoginPage.dll
