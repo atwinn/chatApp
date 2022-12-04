@@ -130,28 +130,6 @@ namespace ChatApplication
             frm.Invoke((MethodInvoker)(() => frm.Show()));
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            if(addChatPanel.Visible == true)
-            {
-                addChatPanel.Visible = false;
-            } else if (chatPanel.Visible == true)
-            {
-                chatPanel.Visible = false;
-                chattingUnPn.Visible = false;
-                addChatPanel.Visible = true;
-            } else
-            {
-                addChatPanel.Visible = true;
-            }
-            addChatPanel.BringToFront();
-        }
-
-        private void guna2Button4_Click(object sender, EventArgs e)
-        {
-            addChatPanel.Visible = false;
-        }
-
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             if (addGroupPanel.Visible == true)

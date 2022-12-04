@@ -58,7 +58,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.logout = new System.Windows.Forms.PictureBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
@@ -361,77 +360,11 @@
             this.textBox2.Size = new System.Drawing.Size(229, 22);
             this.textBox2.TabIndex = 1;
             // 
-            // addChatPanel
-            // 
-            this.addChatPanel.BackColor = System.Drawing.Color.Transparent;
-            this.addChatPanel.BorderRadius = 6;
-            this.addChatPanel.Controls.Add(this.guna2Button4);
-            this.addChatPanel.Controls.Add(this.guna2Panel4);
-            this.guna2Transition1.SetDecoration(this.addChatPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.addChatPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.addChatPanel.Location = new System.Drawing.Point(120, 193);
-            this.addChatPanel.Name = "addChatPanel";
-            this.addChatPanel.Size = new System.Drawing.Size(291, 133);
-            this.addChatPanel.TabIndex = 8;
-            this.addChatPanel.UseTransparentBackground = true;
-            this.addChatPanel.Visible = false;
-            // 
-            // guna2Button4
-            // 
-            this.guna2Button4.Animated = true;
-            this.guna2Button4.AnimatedGIF = true;
-            this.guna2Button4.BorderRadius = 10;
-            this.guna2Transition1.SetDecoration(this.guna2Button4, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
-            this.guna2Button4.Location = new System.Drawing.Point(158, 79);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(110, 37);
-            this.guna2Button4.TabIndex = 8;
-            this.guna2Button4.Text = "Thêm chat";
-            this.guna2Button4.UseTransparentBackground = true;
-            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
-            this.guna2Panel4.BorderRadius = 10;
-            this.guna2Panel4.BorderThickness = 2;
-            this.guna2Panel4.Controls.Add(this.userName_Send);
-            this.guna2Transition1.SetDecoration(this.guna2Panel4, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Panel4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Panel4.Location = new System.Drawing.Point(22, 17);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(246, 45);
-            this.guna2Panel4.TabIndex = 7;
-            // 
-            // userName_Send
-            // 
-            this.userName_Send.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.userName_Send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.userName_Send.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.guna2Transition1.SetDecoration(this.userName_Send, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.userName_Send.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.userName_Send.ForeColor = System.Drawing.Color.White;
-            this.userName_Send.Location = new System.Drawing.Point(8, 11);
-            this.userName_Send.Name = "userName_Send";
-            this.userName_Send.PlaceholderText = "Tên người dùng";
-            this.userName_Send.Size = new System.Drawing.Size(229, 22);
-            this.userName_Send.TabIndex = 1;
-            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
             this.guna2Panel2.Controls.Add(this.logout);
             this.guna2Panel2.Controls.Add(this.guna2Button2);
-            this.guna2Panel2.Controls.Add(this.guna2Button1);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox2);
             this.guna2Transition1.SetDecoration(this.guna2Panel2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -444,7 +377,7 @@
             // 
             this.guna2Transition1.SetDecoration(this.logout, Guna.UI2.AnimatorNS.DecorationType.None);
             this.logout.Image = global::ChatApplication.Properties.Resources.logout1;
-            this.logout.Location = new System.Drawing.Point(12, 621);
+            this.logout.Location = new System.Drawing.Point(18, 612);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(30, 33);
             this.logout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -468,33 +401,12 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
-            this.guna2Button2.Location = new System.Drawing.Point(137, 112);
+            this.guna2Button2.Location = new System.Drawing.Point(18, 112);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(110, 37);
+            this.guna2Button2.Size = new System.Drawing.Size(229, 37);
             this.guna2Button2.TabIndex = 2;
             this.guna2Button2.Text = "Thêm nhóm";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.AnimatedGIF = true;
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Transition1.SetDecoration(this.guna2Button1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
-            this.guna2Button1.Location = new System.Drawing.Point(18, 112);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(110, 37);
-            this.guna2Button1.TabIndex = 2;
-            this.guna2Button1.Text = "Thêm chat";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2PictureBox2
             // 
@@ -595,7 +507,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox closeBox;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private PictureBox logout;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
