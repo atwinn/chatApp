@@ -508,19 +508,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Acer\\.nuget\\packages\\": {}
+    "C:\\Users\\dinhd\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Mon hoc\\Laptrinhmang\\DoAn\\ProjectLTM\\chatApp\\server\\server\\server.csproj",
+      "projectUniqueName": "D:\\Study\\chatApp\\server\\server\\server.csproj",
       "projectName": "server",
-      "projectPath": "D:\\Mon hoc\\Laptrinhmang\\DoAn\\ProjectLTM\\chatApp\\server\\server\\server.csproj",
-      "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "D:\\Mon hoc\\Laptrinhmang\\DoAn\\ProjectLTM\\chatApp\\server\\server\\obj\\",
+      "projectPath": "D:\\Study\\chatApp\\server\\server\\server.csproj",
+      "packagesPath": "C:\\Users\\dinhd\\.nuget\\packages\\",
+      "outputPath": "D:\\Study\\chatApp\\server\\server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dinhd\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -534,11 +534,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\Mon hoc\\Laptrinhmang\\DoAn\\ProjectLTM\\chatApp\\connectSQL\\connectSQL.csproj": {
-              "projectPath": "D:\\Mon hoc\\Laptrinhmang\\DoAn\\ProjectLTM\\chatApp\\connectSQL\\connectSQL.csproj"
+            "D:\\Study\\chatApp\\connectSQL\\connectSQL.csproj": {
+              "projectPath": "D:\\Study\\chatApp\\connectSQL\\connectSQL.csproj"
             },
-            "D:\\Mon hoc\\Laptrinhmang\\DoAn\\ProjectLTM\\chatApp\\MESSAGE\\MESSAGE.csproj": {
-              "projectPath": "D:\\Mon hoc\\Laptrinhmang\\DoAn\\ProjectLTM\\chatApp\\MESSAGE\\MESSAGE.csproj"
+            "D:\\Study\\chatApp\\MESSAGE\\MESSAGE.csproj": {
+              "projectPath": "D:\\Study\\chatApp\\MESSAGE\\MESSAGE.csproj"
             }
           }
         }
@@ -577,7 +577,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

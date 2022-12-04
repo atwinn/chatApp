@@ -46,15 +46,3 @@ D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.dll
 D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\refint\MESSAGE.dll
 D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.pdb
 D:\Study\chatApp\MESSAGE\obj\Debug\net6.0\ref\MESSAGE.dll
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\bin\Debug\net6.0\MESSAGE.deps.json
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\bin\Debug\net6.0\MESSAGE.dll
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\bin\Debug\net6.0\MESSAGE.pdb
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.csproj.AssemblyReference.cache
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.GeneratedMSBuildEditorConfig.editorconfig
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.AssemblyInfoInputs.cache
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.AssemblyInfo.cs
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.csproj.CoreCompileInputs.cache
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.dll
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\obj\Debug\net6.0\refint\MESSAGE.dll
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\obj\Debug\net6.0\MESSAGE.pdb
-D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\MESSAGE\obj\Debug\net6.0\ref\MESSAGE.dll
