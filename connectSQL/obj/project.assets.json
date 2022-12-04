@@ -470,24 +470,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vyvul\\.nuget\\packages\\": {},
-    "D:\\software\\visual studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\dinhd\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\code\\C#\\project\\chat\\chatApp\\connectSQL\\connectSQL.csproj",
+      "projectUniqueName": "D:\\Study\\chatApp\\connectSQL\\connectSQL.csproj",
       "projectName": "connectSQL",
-      "projectPath": "D:\\code\\C#\\project\\chat\\chatApp\\connectSQL\\connectSQL.csproj",
-      "packagesPath": "C:\\Users\\vyvul\\.nuget\\packages\\",
-      "outputPath": "D:\\code\\C#\\project\\chat\\chatApp\\connectSQL\\obj\\",
+      "projectPath": "D:\\Study\\chatApp\\connectSQL\\connectSQL.csproj",
+      "packagesPath": "C:\\Users\\dinhd\\.nuget\\packages\\",
+      "outputPath": "D:\\Study\\chatApp\\connectSQL\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\software\\visual studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\vyvul\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\dinhd\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
