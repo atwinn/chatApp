@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj": {}
+    "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj": {}
   },
   "projects": {
-    "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj": {
+    "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj",
+        "projectUniqueName": "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj",
         "projectName": "ChatApplication",
-        "projectPath": "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\ChatApplication.csproj",
-        "packagesPath": "C:\\Users\\vyvul\\.nuget\\packages\\",
-        "outputPath": "D:\\code\\C#\\project\\chat\\chatApp\\ChatApplication\\obj\\",
+        "projectPath": "D:\\Study\\chatApp\\ChatApplication\\ChatApplication.csproj",
+        "packagesPath": "C:\\Users\\dinhd\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\chatApp\\ChatApplication\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\software\\visual studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\vyvul\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dinhd\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

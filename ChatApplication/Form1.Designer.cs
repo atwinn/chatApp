@@ -73,8 +73,6 @@
             this.addGroupPanel.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
-            this.addChatPanel.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -360,6 +358,40 @@
             this.textBox2.Size = new System.Drawing.Size(229, 22);
             this.textBox2.TabIndex = 1;
             // 
+            // addChatPanel
+            // 
+            this.guna2Transition1.SetDecoration(this.addChatPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.addChatPanel.Location = new System.Drawing.Point(0, 0);
+            this.addChatPanel.Name = "addChatPanel";
+            this.addChatPanel.Size = new System.Drawing.Size(200, 100);
+            this.addChatPanel.TabIndex = 10;
+            // 
+            // guna2Button4
+            // 
+            this.guna2Transition1.SetDecoration(this.guna2Button4, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.Location = new System.Drawing.Point(0, 0);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button4.TabIndex = 0;
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Transition1.SetDecoration(this.guna2Panel4, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(200, 100);
+            this.guna2Panel4.TabIndex = 0;
+            // 
+            // userName_Send
+            // 
+            this.guna2Transition1.SetDecoration(this.userName_Send, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.userName_Send.Location = new System.Drawing.Point(0, 0);
+            this.userName_Send.Name = "userName_Send";
+            this.userName_Send.Size = new System.Drawing.Size(100, 23);
+            this.userName_Send.TabIndex = 0;
+            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
@@ -485,9 +517,6 @@
             this.guna2Panel6.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
-            this.addChatPanel.ResumeLayout(false);
-            this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();

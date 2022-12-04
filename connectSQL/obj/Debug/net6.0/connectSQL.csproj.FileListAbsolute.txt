@@ -34,3 +34,15 @@ D:\Study\chatApp\connectSQL\obj\Debug\net6.0\connectSQL.dll
 D:\Study\chatApp\connectSQL\obj\Debug\net6.0\refint\connectSQL.dll
 D:\Study\chatApp\connectSQL\obj\Debug\net6.0\connectSQL.pdb
 D:\Study\chatApp\connectSQL\obj\Debug\net6.0\ref\connectSQL.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\bin\Debug\net6.0\connectSQL.deps.json
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\bin\Debug\net6.0\connectSQL.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\bin\Debug\net6.0\connectSQL.pdb
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\obj\Debug\net6.0\connectSQL.csproj.AssemblyReference.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\obj\Debug\net6.0\connectSQL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\obj\Debug\net6.0\connectSQL.AssemblyInfoInputs.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\obj\Debug\net6.0\connectSQL.AssemblyInfo.cs
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\obj\Debug\net6.0\connectSQL.csproj.CoreCompileInputs.cache
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\obj\Debug\net6.0\connectSQL.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\obj\Debug\net6.0\refint\connectSQL.dll
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\obj\Debug\net6.0\connectSQL.pdb
+D:\Mon hoc\Laptrinhmang\DoAn\ProjectLTM\chatApp\connectSQL\obj\Debug\net6.0\ref\connectSQL.dll
