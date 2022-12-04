@@ -15,6 +15,9 @@ using Microsoft.Win32;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualBasic.Logging;
+using System.Windows.Forms;
+using System.Collections;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace server
 {
@@ -23,10 +26,149 @@ namespace server
         IPEndPoint iep ;
         Socket server ;
         //Dictionary<string, string> DS;
+        //List<string> DSNhom;
         Dictionary<string, List<string>> DSNhom;
         Dictionary<string, Socket> DSClient;
         List<USER> DS  ;
         bool active = false;
+
+        private List<string> getAllUserOfGroup(string group_name)
+        {
+
+            List<string>  DS_member = new List<string>();
+            //DSNhom = new List<string>();
+            //DSNhom = new Dictionary<string, List<string>>();
+            SqlConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
+            try
+            {
+                string sql = "Select * from Group_member where group_name = '" + group_name + "'";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                //DS = new List<USER>();
+
+                using (DbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+
+                        while (reader.Read())
+                        {
+                            //int group_id = reader.GetInt16(0);
+                            string username = reader.GetString(1);
+
+                            DS_member.Add(username);
+                            //var user = new USER(username, password, name);
+
+                            // DS.Add(user);
+
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+                Console.WriteLine(ex.StackTrace);
+            }
+            finally
+            {
+                // Đóng kết nối.
+                conn.Close();
+                // Hủy đối tượng, giải phóng tài nguyên.
+                conn.Dispose();
+            }
+            return DS_member;
+        }
+        private void getAllGroup()
+        {
+            //DS = new List<USER>();
+            //DSNhom = new List<string>();
+            DSNhom = new Dictionary<string, List<string>>();
+            SqlConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
+            try
+            {
+                string sql = "Select * from Groups";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                //DS = new List<USER>();
+
+                using (DbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+
+                        while (reader.Read())
+                        {
+                            int group_id = reader.GetInt32(0);
+                            string group_name = reader.GetString(1);
+
+                            DSNhom.Add(group_name, getAllUserOfGroup(group_name));
+                            //var user = new USER(username, password, name);
+
+                            // DS.Add(user);
+
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+                Console.WriteLine(ex.StackTrace);
+            }
+            finally
+            {
+                // Đóng kết nối.
+                conn.Close();
+                // Hủy đối tượng, giải phóng tài nguyên.
+                conn.Dispose();
+            }
+        }
+        //private int getMaxIdGroup()
+        //{
+        //    SqlConnection conn = DBUtils.GetDBConnection();
+        //    conn.Open();
+        //    try
+        //    {
+        //        string sql = "select max(group_id) max from Groups";
+        //        SqlCommand cmd = new SqlCommand();
+        //        cmd.Connection = conn;
+        //        cmd.CommandText = sql;
+
+        //        using (DbDataReader reader = cmd.ExecuteReader())
+        //        {
+        //            if (reader.HasRows)
+        //            {
+
+        //                while (reader.Read())
+        //                {
+        //                    int group_id = reader.GetInt16(0);
+        //                    return group_id;
+
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine("Error: " + ex);
+        //        Console.WriteLine(ex.StackTrace);
+        //    }
+        //    finally
+        //    {
+        //        // Đóng kết nối.
+        //        conn.Close();
+        //        // Hủy đối tượng, giải phóng tài nguyên.
+        //        conn.Dispose();
+        //    }
+        //    return 0;
+        //}
         private void KhoiTaoUser()
         {
             DS = new List<USER>();
@@ -74,7 +216,7 @@ namespace server
                 conn.Dispose();
             }
 
-
+            
 
 
 
@@ -95,6 +237,8 @@ namespace server
             //}
             DSClient = new Dictionary<string, Socket>();
         }
+
+        
         private Boolean register(string username, string password, string name)
         {
             SqlConnection connection = DBUtils.GetDBConnection();
@@ -113,6 +257,92 @@ namespace server
                 cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = password;
 
                 cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+
+                // Thực thi Command (Dùng cho delete, insert, update).
+                int rowCount = cmd.ExecuteNonQuery();
+                if (rowCount > 0)
+                {
+                    return true;
+                }
+                else return false;
+                //Console.WriteLine("Row Count affected = " + rowCount);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+                Console.WriteLine(e.StackTrace);
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                connection = null;
+            }
+            return false;
+            //Console.Read();
+
+        }
+
+        private Boolean create_group(string group_name)
+        {
+            SqlConnection connection = DBUtils.GetDBConnection();
+            connection.Open();
+            try
+            {
+                // Câu lệnh Insert.
+                string sql = "Insert into Groups (group_name) "
+                                                 + " values (@group_name) ";
+
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql;
+
+                cmd.Parameters.Add("@group_name", SqlDbType.VarChar).Value = group_name;
+
+
+                // Thực thi Command (Dùng cho delete, insert, update).
+                int rowCount = cmd.ExecuteNonQuery();
+                if (rowCount > 0)
+                {
+                    return true;
+                }
+                else return false;
+                //Console.WriteLine("Row Count affected = " + rowCount);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+                Console.WriteLine(e.StackTrace);
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                connection = null;
+            }
+            return false;
+            //Console.Read();
+
+        }
+
+        private Boolean addMemberToGroup(string group_name, string username)
+        {
+            SqlConnection connection = DBUtils.GetDBConnection();
+            connection.Open();
+            try
+            {
+                // Câu lệnh Insert.
+                string sql = "Insert into Group_member (group_name,username,date_join) "
+                                                 + " values (@group_name,@username,@date_join) ";
+
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql;
+
+                cmd.Parameters.Add("@group_name", SqlDbType.VarChar).Value = group_name;
+
+                cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = username;
+
+                cmd.Parameters.Add("@date_join", SqlDbType.DateTime).Value = DateTime.Now;
+
 
                 // Thực thi Command (Dùng cho delete, insert, update).
                 int rowCount = cmd.ExecuteNonQuery();
@@ -222,7 +452,43 @@ namespace server
             return false;
 
         }
+        private Boolean check_user_tontai(string username)
+        {
+            SqlConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
+            try
+            {
+                string sql = "Select * from Users where username = '" + username + "'" ;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                //DS = new List<USER>();
 
+                using (DbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+                Console.WriteLine(ex.StackTrace);
+            }
+            finally
+            {
+                // Đóng kết nối.
+                conn.Close();
+                // Hủy đối tượng, giải phóng tài nguyên.
+                conn.Dispose();
+            }
+            return false;
+
+        }
         public Form1()
         {
             InitializeComponent();
@@ -242,6 +508,7 @@ namespace server
                 }
             }
             KhoiTaoUser();
+            getAllGroup();
         }
         public void AppendTextBox(string value)
         {
@@ -377,7 +644,7 @@ namespace server
                                     }
                                     else//Nhom
                                     {
-                                        if (DSNhom.Keys.Contains(mes.usernameReceiver)) 
+                                        if (DSNhom.Keys.Contains(mes.usernameReceiver))
                                         {
                                             if (DSNhom[mes.usernameReceiver].Contains(mes.usernameSender))
                                             {
@@ -390,7 +657,7 @@ namespace server
                                                         Socket friend = DSClient[user];
                                                         friend.Send(data, recv, SocketFlags.None);
 
-                                                        
+
                                                     }
                                                 }
                                             }
@@ -419,9 +686,21 @@ namespace server
 
                                     if (!DSNhom.Keys.Contains(com.content))
                                     {
-                                        DSNhom.Add(com.content, new List<string>());
-                                        com = new COMMON(8, "OK");
-                                        sendJson(client, com);
+                                        if(create_group(com.content))
+                                        {
+                                            List<String> groups = null;
+                                            
+                                            DSNhom.Add(com.content, groups);
+                                            com = new COMMON(8, "OK");
+                                            getAllGroup();
+                                            sendJson(client, com);
+                                        }    
+                                        else
+                                        {
+                                            com = new COMMON(8, "CANCEL");
+                                            sendJson(client, com);
+                                        }    
+                                        
                                     }
                                     else
                                     {
@@ -434,33 +713,37 @@ namespace server
                                 break;
                             case 7:
                                 {
-                                    //MESSAGE.ADDNHOM? obj = JsonSerializer.Deserialize<MESSAGE.ADDNHOM>(com.content);
-                                    //if (!DSNhom.Keys.Contains(obj.GrpName))
-                                    //{
-                                    //    com = new COMMON(9, "CANCEL");
-                                    //    sendJson(client, com);
-                                    //    return;
+                                    MESSAGE.ADDNHOM? obj = JsonSerializer.Deserialize<MESSAGE.ADDNHOM>(com.content);
+                                    if (!DSNhom.Keys.Contains(obj.GrpName))
+                                    {
+                                        com = new COMMON(9, "CANCEL");
+                                        sendJson(client, com);
+                                        return;
+
+                                    }                                    
+                                    else 
+                                    {
+                                        foreach(var user in obj.members)
+                                            if (check_user_tontai(user))
+                                            {
+                                                com = new COMMON(9, "CANCEL");
+                                                sendJson(client, com);
+                                                return;
+                                            }   
                                         
-                                    //}                                    
-                                    //else 
-                                    //{
-                                    //    foreach(var user in obj.members)
-                                    //        if (!DS.Keys.Contains(user))
-                                    //        {
-                                    //            com = new COMMON(9, "CANCEL");
-                                    //            sendJson(client, com);
-                                    //            return;
-                                    //        }
-                                    //    foreach (var user in obj.members)
-                                    //    {
-                                    //        if (!DSNhom[obj.GrpName].Contains(user))                                            
-                                    //                DSNhom[obj.GrpName].Add(user);
-                                    //    }
-                                        
-                                    //    //DSNhom.Add(com.content, new List<string>());
-                                    //    com = new COMMON(9, "OK");
-                                    //    sendJson(client, com);
-                                    //}
+                                        foreach (var user in obj.members)
+                                        {
+                                            if (!DSNhom[obj.GrpName].Contains(user))
+                                                if (addMemberToGroup(obj.GrpName, user))
+                                                {
+                                                    //DSNhom[obj.GrpName].Add(obj.members);
+                                                    DSNhom[obj.GrpName].Add(user);
+                                                    com = new COMMON(9, "OK");
+                                                    sendJson(client, com);
+                                                }
+                                            
+                                        }
+                                    }
                                 }
                                 break;
                             
