@@ -1,0 +1,6 @@
+D:\Study\Publish Test\ChatApplication.exe
+D:\Study\Publish Test\ChatApplication.dll
+D:\Study\Publish Test\ChatApplication.deps.json
+D:\Study\Publish Test\ChatApplication.runtimeconfig.json
+D:\Study\Publish Test\ChatApplication.pdb
+D:\Study\Publish Test\Guna.UI2.dll
