@@ -11,6 +11,12 @@ namespace ChatApplication
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2Panel PanelTong;
         private Guna.UI2.WinForms.Guna2Shapes circle;
+        private Guna.UI2.WinForms.Guna2Panel sendContainer;
+        private Guna.UI2.WinForms.Guna2GradientPanel sendPn;
+        private Guna.UI2.WinForms.Guna2Panel recvContainer;
+        private Guna.UI2.WinForms.Guna2GradientPanel recvPn;
+        private System.Windows.Forms.Label recvLabel;
+        private System.Windows.Forms.Label sendChatLabel;
         public Form1()
         {
             InitializeComponent();
@@ -108,6 +114,7 @@ namespace ChatApplication
         private void userPn_Click(object sender, System.EventArgs e)
         {
             chatPanel.Visible = true;
+            chattingUnPn.Visible = true;
         }
 
         private void closeBox_Click(object sender, EventArgs e)
@@ -131,6 +138,7 @@ namespace ChatApplication
             } else if (chatPanel.Visible == true)
             {
                 chatPanel.Visible = false;
+                chattingUnPn.Visible = false;
                 addChatPanel.Visible = true;
             } else
             {
@@ -153,6 +161,7 @@ namespace ChatApplication
             else if (chatPanel.Visible == true)
             {
                 chatPanel.Visible = false;
+                chattingUnPn.Visible = false;
                 addGroupPanel.Visible = true;
             }
             else
@@ -165,6 +174,96 @@ namespace ChatApplication
         private void guna2Button5_Click(object sender, EventArgs e)
         {
             addGroupPanel.Visible = false;
+        }
+
+        private void createSendView()
+        {
+            sendContainer = new Guna2Panel();
+            sendPn = new Guna2GradientPanel();
+            sendChatLabel = new System.Windows.Forms.Label();
+
+            this.Controls.Add(sendContainer);
+            chatBoxPn.Controls.Add(sendContainer);
+            sendContainer.Controls.Add(sendPn);
+
+            sendContainer.BringToFront();
+            guna2Transition1.SetDecoration(sendContainer, Guna.UI2.AnimatorNS.DecorationType.None);
+            sendContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            sendContainer.Location = new System.Drawing.Point(0, 0);
+            sendContainer.Name = "sendContainer";
+            sendContainer.Size = new System.Drawing.Size(761, 61);
+            sendContainer.TabIndex = 0;
+            sendContainer.UseTransparentBackground = true;
+
+            sendPn.BorderRadius = 6;
+            sendPn.Controls.Add(sendChatLabel);
+            guna2Transition1.SetDecoration(sendPn, Guna.UI2.AnimatorNS.DecorationType.None);
+            sendPn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
+            sendPn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            sendPn.ForeColor = System.Drawing.Color.White;
+            sendPn.Location = new System.Drawing.Point(455, 8);
+            sendPn.Name = "sendPn";
+            sendPn.Size = new System.Drawing.Size(290, 46);
+            sendPn.TabIndex = 1;
+            sendPn.UseTransparentBackground = true;
+
+            sendChatLabel.AutoSize = true;
+            guna2Transition1.SetDecoration(sendChatLabel, Guna.UI2.AnimatorNS.DecorationType.None);
+            sendChatLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            sendChatLabel.Location = new System.Drawing.Point(20, 13);
+            sendChatLabel.Name = "sendChatLabel";
+            sendChatLabel.Size = new System.Drawing.Size(44, 21);
+            sendChatLabel.TabIndex = 0;
+            sendChatLabel.Text = "hello";
+        }
+
+        private void createRecvView()
+        {
+            recvContainer = new Guna2Panel();
+            recvPn = new Guna2GradientPanel();
+            recvLabel = new System.Windows.Forms.Label();
+
+            this.Controls.Add(recvContainer);
+            chatBoxPn.Controls.Add(recvContainer);
+            recvContainer.Controls.Add(recvPn);
+
+            recvContainer.BringToFront();
+            guna2Transition1.SetDecoration(recvContainer, Guna.UI2.AnimatorNS.DecorationType.None);
+            recvContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            recvContainer.Location = new System.Drawing.Point(0, 61);
+            recvContainer.Name = "recvContainer";
+            recvContainer.Size = new System.Drawing.Size(761, 61);
+            recvContainer.TabIndex = 1;
+            recvContainer.UseTransparentBackground = true;
+
+            recvPn.BorderRadius = 6;
+            recvPn.Controls.Add(recvLabel);
+            guna2Transition1.SetDecoration(recvPn, Guna.UI2.AnimatorNS.DecorationType.None);
+            recvPn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            recvPn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
+            recvPn.ForeColor = System.Drawing.Color.White;
+            recvPn.Location = new System.Drawing.Point(14, 8);
+            recvPn.Name = "recvPn";
+            recvPn.Size = new System.Drawing.Size(290, 46);
+            recvPn.TabIndex = 1;
+            recvPn.UseTransparentBackground = true;
+
+            recvLabel.AutoSize = true;
+            guna2Transition1.SetDecoration(recvLabel, Guna.UI2.AnimatorNS.DecorationType.None);
+            recvLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            recvLabel.ForeColor = System.Drawing.Color.Black;
+            recvLabel.Location = new System.Drawing.Point(19, 12);
+            recvLabel.Name = "recvLabel";
+            recvLabel.Size = new System.Drawing.Size(44, 21);
+            recvLabel.TabIndex = 0;
+            recvLabel.Text = "hello";
+        }
+
+        private void sendBtn_Click(object sender, EventArgs e)
+        {
+            createSendView();
+            createRecvView();
+            chatBoxPn.ScrollControlIntoView(sendContainer);
         }
     }
 }
