@@ -148,6 +148,7 @@
             this.chatBoxPn.Name = "chatBoxPn";
             this.chatBoxPn.Size = new System.Drawing.Size(761, 532);
             this.chatBoxPn.TabIndex = 8;
+            this.chatBoxPn.UseTransparentBackground = true;
             // 
             // guna2PictureBox5
             // 
@@ -193,7 +194,6 @@
             // 
             // sendBtn
             // 
-            this.sendBtn.Animated = true;
             this.sendBtn.BackColor = System.Drawing.Color.Transparent;
             this.sendBtn.BorderRadius = 6;
             this.guna2Transition1.SetDecoration(this.sendBtn, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -499,6 +499,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
