@@ -18,6 +18,7 @@ using Microsoft.VisualBasic.Logging;
 using System.Windows.Forms;
 using System.Collections;
 using Microsoft.VisualBasic.ApplicationServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace server
 {
@@ -43,6 +44,57 @@ namespace server
             try
             {
                 string sql = "Select * from Group_member where group_name = '" + group_name + "'";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                //DS = new List<USER>();
+
+                using (DbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+
+                        while (reader.Read())
+                        {
+                            //int group_id = reader.GetInt16(0);
+                            string username = reader.GetString(1);
+
+                            DS_member.Add(username);
+                            //var user = new USER(username, password, name);
+
+                            // DS.Add(user);
+
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+                Console.WriteLine(ex.StackTrace);
+            }
+            finally
+            {
+                // Đóng kết nối.
+                conn.Close();
+                // Hủy đối tượng, giải phóng tài nguyên.
+                conn.Dispose();
+            }
+            return DS_member;
+        }
+
+        private List<string> getUserChat()
+        {
+
+            List<string> DS_member = new List<string>();
+            //DSNhom = new List<string>();
+            //DSNhom = new Dictionary<string, List<string>>();
+            SqlConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
+            try
+            {
+                string sql = "Select * from Users";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = sql;
@@ -130,45 +182,8 @@ namespace server
                 conn.Dispose();
             }
         }
-        //private int getMaxIdGroup()
-        //{
-        //    SqlConnection conn = DBUtils.GetDBConnection();
-        //    conn.Open();
-        //    try
-        //    {
-        //        string sql = "select max(group_id) max from Groups";
-        //        SqlCommand cmd = new SqlCommand();
-        //        cmd.Connection = conn;
-        //        cmd.CommandText = sql;
 
-        //        using (DbDataReader reader = cmd.ExecuteReader())
-        //        {
-        //            if (reader.HasRows)
-        //            {
 
-        //                while (reader.Read())
-        //                {
-        //                    int group_id = reader.GetInt16(0);
-        //                    return group_id;
-
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Error: " + ex);
-        //        Console.WriteLine(ex.StackTrace);
-        //    }
-        //    finally
-        //    {
-        //        // Đóng kết nối.
-        //        conn.Close();
-        //        // Hủy đối tượng, giải phóng tài nguyên.
-        //        conn.Dispose();
-        //    }
-        //    return 0;
-        //}
         private void KhoiTaoUser()
         {
             DS = new List<USER>();
@@ -215,26 +230,6 @@ namespace server
                 // Hủy đối tượng, giải phóng tài nguyên.
                 conn.Dispose();
             }
-
-            
-
-
-
-
-            //DSNhom = new Dictionary<string, List<string>>();
-            //char u;
-            //for(u='A';u<'Z';u++)
-            //    DS.Add(u.ToString(), "123");
-            //for(byte i = 0; i < 5; i++)
-            //{
-            //    List<string> nhom = new List<string>();
-            //    for(byte j = 0; j < 3; j++)
-            //    {
-            //        u = (Char)('A'+3 * i + j);
-            //        nhom.Add(u.ToString());
-            //    }
-            //    DSNhom.Add("N"+i.ToString(), nhom);
-            //}
             DSClient = new Dictionary<string, Socket>();
         }
 
@@ -415,6 +410,53 @@ namespace server
 
         }
 
+
+        private Boolean send_message_group(string user_send, string group_name, string message)
+        {
+            SqlConnection connection = DBUtils.GetDBConnection();
+            connection.Open();
+            try
+            {
+                // Câu lệnh Insert.
+                string sql = "Insert into Message_group (user_send, group_name, Date_send, message) "
+                                                 + " values (@user_send, @group_name, @Date_send, @message) ";
+
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sql;
+
+                cmd.Parameters.Add("@user_send", SqlDbType.VarChar).Value = user_send;
+
+                cmd.Parameters.Add("@group_name", SqlDbType.VarChar).Value = group_name;
+
+                cmd.Parameters.Add("@Date_send", SqlDbType.DateTime).Value = DateTime.Now;
+
+                cmd.Parameters.Add("@message", SqlDbType.NVarChar).Value = message;
+
+                // Thực thi Command (Dùng cho delete, insert, update).
+                int rowCount = cmd.ExecuteNonQuery();
+                if (rowCount > 0)
+                {
+                    return true;
+                }
+                else return false;
+                //Console.WriteLine("Row Count affected = " + rowCount);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+                Console.WriteLine(e.StackTrace);
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                connection = null;
+            }
+            return false;
+            //Console.Read();
+
+        }
+
         private Boolean check_login(string username, string password)
         {
             SqlConnection conn = DBUtils.GetDBConnection();
@@ -543,7 +585,20 @@ namespace server
                                 LOGIN? login = JsonSerializer.Deserialize<LOGIN>(com.content);
                                 if (login != null && login.username != null && check_login(login.username,login.pass)==true)
                                 {
-                                    com = new COMMON(3, "OK");
+                                    List<string> strings= new List<string>();
+                                    foreach (KeyValuePair<string, Socket> item in DSClient)
+                                    {
+                                        strings.Add(item.Key);
+                                    }
+                                        
+                                    MESSAGE.DAU dau = new MESSAGE.DAU(getUserChat(), strings);
+                                    //var options = new JsonSerializerOptions { WriteIndented = true };
+                                    string jsonString1 = JsonSerializer.Serialize(dau);
+                                    
+                                    
+
+
+                                    com = new COMMON(3, jsonString1);
                                     sendJson(client, com);
                                     DSClient.Remove(login.username);
                                     DSClient.Add(login.username, client);
@@ -639,7 +694,9 @@ namespace server
                                         {
                                             AppendTextBox(mes.usernameSender + " send to " + mes.usernameReceiver + " content: " + mes.content + Environment.NewLine);
                                             Socket friend = DSClient[mes.usernameReceiver];
+                                            Socket my = DSClient[mes.usernameSender];
                                             friend.Send(data, recv, SocketFlags.None);
+                                            my.Send(data, recv, SocketFlags.None);
                                         }    
                                     }
                                     else//Nhom
@@ -649,6 +706,7 @@ namespace server
                                             if (DSNhom[mes.usernameReceiver].Contains(mes.usernameSender))
                                             {
                                                 AppendTextBox(mes.usernameSender + " send to " + mes.usernameReceiver + " content: " + mes.content + Environment.NewLine);
+                                                send_message_group(mes.usernameSender, mes.usernameReceiver, mes.content);
                                                 foreach (String user in DSNhom[mes.usernameReceiver])
                                                 {
                                                     if (DSClient.Keys.Contains(user))
@@ -677,10 +735,16 @@ namespace server
                                 }
                                 break;
                             case 4:
-                                DSClient[com.content].Close();
-                                DSClient.Remove(com.content);
-                                tieptuc = false;
-                                break;
+                                {
+
+                                    tieptuc = false;
+
+
+                                    DSClient[com.content].Close();
+                                    DSClient.Remove(com.content);
+                                    break;
+                                }
+                                
                             case 6:
                                 {
 
@@ -724,7 +788,7 @@ namespace server
                                     else 
                                     {
                                         foreach(var user in obj.members)
-                                            if (check_user_tontai(user))
+                                            if (!check_user_tontai(user))
                                             {
                                                 com = new COMMON(9, "CANCEL");
                                                 sendJson(client, com);
@@ -746,7 +810,29 @@ namespace server
                                     }
                                 }
                                 break;
-                            
+                            case 11: //reload
+                                {
+                                    
+                                        List<string> strings = new List<string>();
+                                        foreach (KeyValuePair<string, Socket> item in DSClient)
+                                        {
+                                            strings.Add(item.Key);
+                                        }
+
+                                        MESSAGE.DAU dau = new MESSAGE.DAU(getUserChat(), strings);
+                                        //var options = new JsonSerializerOptions { WriteIndented = true };
+                                        string jsonString1 = JsonSerializer.Serialize(dau);
+
+
+
+
+                                        com = new COMMON(12, jsonString1);
+                                        sendJson(client, com);
+                                        
+                                    
+                                    break;
+                                }
+
 
                         }
                     }

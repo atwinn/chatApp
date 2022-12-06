@@ -1,6 +1,0 @@
-D:\Study\chatApp\ChatApplication\bin\Release\net6.0-windows\app.publish\ChatApplication.exe
-D:\Study\chatApp\ChatApplication\bin\Release\net6.0-windows\app.publish\ChatApplication.dll
-D:\Study\chatApp\ChatApplication\bin\Release\net6.0-windows\app.publish\ChatApplication.deps.json
-D:\Study\chatApp\ChatApplication\bin\Release\net6.0-windows\app.publish\ChatApplication.runtimeconfig.json
-D:\Study\chatApp\ChatApplication\bin\Release\net6.0-windows\app.publish\ChatApplication.pdb
-D:\Study\chatApp\ChatApplication\bin\Release\net6.0-windows\app.publish\Guna.UI2.dll

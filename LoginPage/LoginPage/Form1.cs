@@ -11,6 +11,7 @@ using System.Text;
 using System;
 using System.Xml.Linq;
 
+
 namespace LoginPage
 {
     public partial class Form1 : Form
@@ -20,7 +21,7 @@ namespace LoginPage
         Socket client;
         bool thoat = false;
         Thread trd;
-        private string ipAdd = "192.168.1.10";
+        private string ipAdd = "127.0.0.1";
         public Form1()
         {
             InitializeComponent();
@@ -48,62 +49,82 @@ namespace LoginPage
             {
                 if (com != null && com.kind == 3)
                 {
-                    if (com.content == "OK")
+                    if (com.content != null)
                     {
                        
                        // MessageBox.Show("Login success!");
                         ChatApplication.Form1 form = new ChatApplication.Form1();
                         this.Invoke((MethodInvoker)(() => this.Hide()));
+                        form.label_ten.Text = UserName.Text;
+                        form.client = client;
+                        form.trd = trd;
+                        form.thoat = thoat;
+                        form.all_user = UserName.Text;
+                        MESSAGE.DAU? obj = JsonSerializer.Deserialize<MESSAGE.DAU> (com.content);
+                        form.createUserPanel(obj.user,obj.DSClient);
+                        //MessageBox.Show(com.content);
+                        //form.vonglap();
+                        //form.Invoke((MethodInvoker)(() => form.Show()));
                         Application.Run(form);
-                        //ChangeAttribute(Connect, false);
-                        //ChangeAttribute(Logout, true);
-                        while (!thoat)
-                        {
-                            data = new byte[1024];
-                            recv = client.Receive(data);
 
-                            jsonString = Encoding.ASCII.GetString(data, 0, recv);
-                            //jsonString=jsonString.Replace("\\u0022", "\"");
-                            //jsonString = jsonString.Replace("\0", "");
-                            com = JsonSerializer.Deserialize<MESSAGE.COMMON>(jsonString);
+                        //while (!thoat)
+                        //{
+                        //    data = new byte[1024];
+                        //    recv = client.Receive(data);
 
-                            if (com != null)
-                            {
-                                switch (com.kind)
-                                {
-                                    case 2:
-                                        MESSAGE.MESSAGE? mes = JsonSerializer.Deserialize<MESSAGE.MESSAGE>(com.content);
-                                        //AppendTextBox(mes.usernameSender + ":" + mes.content);
-                                        break;
-                                    case 8:
+                        //    jsonString = Encoding.ASCII.GetString(data, 0, recv);
+                        //    //jsonString=jsonString.Replace("\\u0022", "\"");
+                        //    //jsonString = jsonString.Replace("\0", "");
+                        //    com = JsonSerializer.Deserialize<MESSAGE.COMMON>(jsonString);
 
-                                        if (com.content == "OK")
-                                            MessageBox.Show("Create Group success!");
-                                        else MessageBox.Show("Create Group fail!");
-                                        break;
-                                    case 9:
+                        //    if (com != null)
+                        //    {
+                        //        switch (com.kind)
+                        //        {
+                        //            case 2:
+                        //                {
+                        //                    MESSAGE.MESSAGE? mes = JsonSerializer.Deserialize<MESSAGE.MESSAGE>(com.content);
+                        //                    if (UserName.Text == mes.usernameSender)
+                        //                    {
+                        //                        createSendView(mes.content);
+                        //                    }
+                        //                    else
+                        //                    {
+                        //                        createRecvView(mes.content);
+                        //                    }
+                        //                }
+                        //                //MESSAGE.MESSAGE? mes = JsonSerializer.Deserialize<MESSAGE.MESSAGE>(com.content);
+                        //                //AppendTextBox(mes.usernameSender + ":" + mes.content);
+                        //                break;
+                        //            case 8:
 
-                                        if (com.content == "OK")
-                                            MessageBox.Show("Add members success!");
-                                        else MessageBox.Show("Add members fail!");
-                                        break;
-                                    case 10:
+                        //                if (com.content == "OK")
+                        //                    MessageBox.Show("Create Group success!");
+                        //                else MessageBox.Show("Create Group fail!");
+                        //                break;
+                        //            case 9:
 
-                                        if (com.content == "CANCEL")
-                                            MessageBox.Show("User not in group!");
-                                        break;
-                                    case 11:
+                        //                if (com.content == "OK")
+                        //                    MessageBox.Show("Add members success!");
+                        //                else MessageBox.Show("Add members fail!");
+                        //                break;
+                        //            case 10:
 
-                                        if (com.content == "CANCEL")
-                                            MessageBox.Show("No group!");
-                                        break;
-                                }
+                        //                if (com.content == "CANCEL")
+                        //                    MessageBox.Show("User not in group!");
+                        //                break;
+                        //            case 11:
 
-                            }
+                        //                if (com.content == "CANCEL")
+                        //                    MessageBox.Show("No group!");
+                        //                break;
+                        //        }
+
+                        //    }
 
 
 
-                        }
+                        //}
                     }
                     else MessageBox.Show("Login fail!");
                 }

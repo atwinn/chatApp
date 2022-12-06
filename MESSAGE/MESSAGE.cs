@@ -1,4 +1,6 @@
-﻿namespace MESSAGE
+﻿using System.Net.Sockets;
+
+namespace MESSAGE
 {
     public class COMMON
     {
@@ -54,6 +56,18 @@
         }
         public string? GrpName { get; set; }
         public List<string>? members { get; set; }
+    }
+    public class DAU
+    {
+        public DAU(List<string>? user, List<string>? DSClient)
+        {
+            //this.GrpName = GrpName;
+            this.user = user;
+            this.DSClient = DSClient;
+        }
+        //public string? GrpName { get; set; }
+        public List<string>? user { get; set; }
+        public List<string>? DSClient { get; set; }
     }
 
 }
