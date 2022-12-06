@@ -22,6 +22,19 @@ namespace MESSAGE
         public string? username { get; set; }
         public string? pass { get; set; }
     }
+    public class FILE
+    {
+        public FILE(string? usernameSender, string? usernameReceiver, byte[]? file)
+        {
+            this.usernameSender = usernameSender;
+            this.usernameReceiver = usernameReceiver;
+            this.file = file;
+        }
+        public string? usernameSender { get; set; }
+        public string? usernameReceiver { get; set; }
+        public byte[]? file { get; set; }
+
+    }
 
     public class USER
     {

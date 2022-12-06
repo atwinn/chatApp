@@ -153,7 +153,7 @@ namespace ChatApplication
             while (!thoat)
             {
 
-                byte[] data = new byte[1024];
+                byte[] data = new byte[1024 * 5000];
 
 
                 int recv = client.Receive(data);
@@ -213,7 +213,31 @@ namespace ChatApplication
                             }
                             
                             break;
-                       
+                        case 13:
+                            MESSAGE.FILE? obj2 = JsonSerializer.Deserialize<MESSAGE.FILE>(com.content);
+                            if (MessageBox.Show(obj2.usernameSender + " đã gửi một file cho bạn , bạn có muốn nhận không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                string path = "C:/Users/long/OneDrive/Desktop/nhanFile_Client";
+                                byte[] clientData = new byte[1024 * 5000];
+                                clientData = obj2.file;
+                                int receivedBytesLen = clientData.Length;
+                                int fileNameLen = BitConverter.ToInt32(clientData, 0);
+                                string fileName = Encoding.ASCII.GetString(clientData, 4, fileNameLen);
+                                fileName = fileName.Replace("\\", "/");
+                                while (fileName.IndexOf("/") > -1)
+                                {
+                                    fileName = fileName.Substring(fileName.IndexOf("/") + 1);
+                                }
+                                string link = path + "/" + fileName;
+                                BinaryWriter bWrite = new BinaryWriter(File.Open(link, FileMode.Create));
+                                bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
+                                bWrite.Close();
+                                createSendView(obj2.usernameSender + " send a file to " + obj2.usernameReceiver + " Path: " + path + "/" + fileName);
+                                //AppendTextBox(obj.usernameSender + " send a file to " + obj.usernameReceiver + " Path: " + path + "/" + fileName + Environment.NewLine);
+                            }
+
+                            break;
+
                     }
 
                 }
@@ -715,6 +739,58 @@ namespace ChatApplication
 
                 return cp;
             }
+        }
+
+        private void guna2PictureBox3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            Thread t = new Thread((ThreadStart)(() => {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                //namepath.Text = filePath;
+                //textBox2.Text = Path.GetFileName(openFileDialog.FileName);
+                var fileStream = openFileDialog.OpenFile();
+                string path = "";
+                filePath = filePath.Replace("\\", "/");
+                while (filePath.IndexOf("/") > -1)
+                {
+                    path += filePath.Substring(0, filePath.IndexOf("/") + 1);
+                    filePath = filePath.Substring(filePath.IndexOf("/") + 1);
+                }
+                string fileName = filePath;// "c:\\filetosend.txt";
+                byte[] fileNameByte = Encoding.ASCII.GetBytes(fileName);
+                byte[] fileNameLen = BitConverter.GetBytes(fileNameByte.Length);
+                byte[] fileData = File.ReadAllBytes(path + fileName);
+                byte[] clientData = new byte[4 + fileNameByte.Length + fileData.Length];
+                if (clientData.Length > 1024 * 5000)
+                {
+                    MessageBox.Show(" Kích thước file không được lớn hơn 5mb ");
+                }
+                else
+                {
+                    fileNameLen.CopyTo(clientData, 0);
+                    fileNameByte.CopyTo(clientData, 4);
+                    fileData.CopyTo(clientData, 4 + fileNameByte.Length);
+                        new Thread(() =>
+                        {
+                            MESSAGE.FILE file = new MESSAGE.FILE(all_user, chattingUN.Text, clientData);
+                            string jsonString = JsonSerializer.Serialize(file);
+                            MESSAGE.COMMON common = new MESSAGE.COMMON(8, jsonString);
+                            sendJson(common);
+                        }).Start();
+                      
+
+
+
+                    }
+            }
+            }));
+
+            // Run your code from a thread that joins the STA Thread
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
         }
     }
 }
