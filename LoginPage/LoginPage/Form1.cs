@@ -139,7 +139,7 @@ namespace LoginPage
         }
         private void ThreadRegister()
         {
-            byte[] data = new byte[1024];
+            byte[] data = new byte[1024 * 5000];
             MESSAGE.USER login = new MESSAGE.USER(txtUser_re.Text, pass_re.Text, txtname.Text);
 
             string jsonString = JsonSerializer.Serialize(login);

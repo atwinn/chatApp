@@ -319,7 +319,7 @@
             // 
             // emoji_list
             // 
-            this.emoji_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+           /* this.emoji_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
             this.emoji_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.guna2Transition1.SetDecoration(this.emoji_list, Guna.UI2.AnimatorNS.DecorationType.None);
             this.emoji_list.ForeColor = System.Drawing.Color.White;
@@ -351,7 +351,7 @@
             this.emoji_list.TabIndex = 0;
             this.emoji_list.UseCompatibleStateImageBehavior = false;
             this.emoji_list.Visible = false;
-            this.emoji_list.MouseClick += new System.Windows.Forms.MouseEventHandler(this.emoji_list_MouseClick);
+            this.emoji_list.MouseClick += new System.Windows.Forms.MouseEventHandler(this.emoji_list_MouseClick);*/
             // 
             // txtchatbox
             // 

@@ -120,7 +120,7 @@ namespace ChatApplication
             recvPn = new Guna2GradientPanel();
             recvLabel = new System.Windows.Forms.Label();
             recvUnLabel = new System.Windows.Forms.Label();
-            this.Invoke((MethodInvoker) delegate 
+            this.Invoke((MethodInvoker)delegate
             {
                 this.Controls.Add(recvContainer);
                 chatBoxPn.Controls.Add(recvContainer);
@@ -285,7 +285,7 @@ namespace ChatApplication
                             MESSAGE.FILE? obj2 = JsonSerializer.Deserialize<MESSAGE.FILE>(com.content);
                             if (MessageBox.Show(obj2.usernameSender + " đã gửi một file cho bạn , bạn có muốn nhận không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
-                                string path = "C:/Users/long/OneDrive/Desktop/nhanFile_Client";
+                                string path = "C:/Users/ad/Desktop/nhanFile_Client";
                                 byte[] clientData = new byte[1024 * 5000];
                                 clientData = obj2.file;
                                 int receivedBytesLen = clientData.Length;
@@ -915,10 +915,10 @@ namespace ChatApplication
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // vonglap();
-            //Thread trd1 = new Thread(new ThreadStart(this.vonglap));
-            //trd1.IsBackground = true;
-            //trd1.Start();
+           // vonglap();
+            Thread trd1 = new Thread(new ThreadStart(this.vonglap));
+            trd1.IsBackground = true;
+            trd1.Start();
         }
 
         private void chattingUN_Click(object sender, EventArgs e)
@@ -977,7 +977,10 @@ namespace ChatApplication
                     byte[] clientData = new byte[4 + fileNameByte.Length + fileData.Length];
                     if (clientData.Length > 1024 * 5000)
                     {
-                        MessageBox.Show(" Kích thước file không được lớn hơn 5mb ");
+                        new Thread(() =>
+                        {
+                            MessageBox.Show(" Kích thước file không được lớn hơn 5mb ");
+                        }).Start();
                     }
                     else
                     {
@@ -1102,4 +1105,5 @@ namespace ChatApplication
             string i = listView1.SelectedItems[0].Text;
             txtchatbox.Text += i;
         }
+    }
 }
