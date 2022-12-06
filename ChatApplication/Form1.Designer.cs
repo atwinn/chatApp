@@ -186,7 +186,11 @@
             // 
             // listView1
             // 
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.guna2Transition1.SetDecoration(this.listView1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.listView1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listView1.ForeColor = System.Drawing.Color.White;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2,
@@ -604,6 +608,7 @@
             // 
             // btnReload
             // 
+            this.btnReload.BorderColor = System.Drawing.Color.Empty;
             this.btnReload.BorderRadius = 6;
             this.guna2Transition1.SetDecoration(this.btnReload, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -616,15 +621,13 @@
             this.btnReload.Location = new System.Drawing.Point(22, 153);
             this.btnReload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(105, 18);
+            this.btnReload.Size = new System.Drawing.Size(110, 25);
             this.btnReload.TabIndex = 5;
             this.btnReload.Text = "Reload";
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // addMemberBtn
             // 
-            this.addMemberBtn.Animated = true;
-            this.addMemberBtn.AnimatedGIF = true;
             this.addMemberBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.addMemberBtn.BorderRadius = 10;
             this.addMemberBtn.BorderThickness = 2;
@@ -637,19 +640,17 @@
             this.addMemberBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addMemberBtn.ForeColor = System.Drawing.Color.White;
             this.addMemberBtn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
-            this.addMemberBtn.Location = new System.Drawing.Point(142, 111);
+            this.addMemberBtn.Location = new System.Drawing.Point(137, 111);
             this.addMemberBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addMemberBtn.Name = "addMemberBtn";
-            this.addMemberBtn.Size = new System.Drawing.Size(105, 38);
+            this.addMemberBtn.Size = new System.Drawing.Size(110, 38);
             this.addMemberBtn.TabIndex = 2;
             this.addMemberBtn.Text = "Thêm thành viên";
             this.addMemberBtn.Click += new System.EventHandler(this.addMemberBtn_Click);
             // 
             // groupChatBtn
             // 
-            this.groupChatBtn.Animated = true;
-            this.groupChatBtn.AnimatedGIF = true;
-            this.groupChatBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.groupChatBtn.BorderColor = System.Drawing.Color.Empty;
             this.groupChatBtn.BorderRadius = 6;
             this.guna2Transition1.SetDecoration(this.groupChatBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.groupChatBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -660,18 +661,16 @@
             this.groupChatBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupChatBtn.ForeColor = System.Drawing.Color.White;
             this.groupChatBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
-            this.groupChatBtn.Location = new System.Drawing.Point(142, 153);
+            this.groupChatBtn.Location = new System.Drawing.Point(137, 153);
             this.groupChatBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupChatBtn.Name = "groupChatBtn";
-            this.groupChatBtn.Size = new System.Drawing.Size(105, 18);
+            this.groupChatBtn.Size = new System.Drawing.Size(110, 25);
             this.groupChatBtn.TabIndex = 2;
             this.groupChatBtn.Text = "Chat nhóm";
             this.groupChatBtn.Click += new System.EventHandler(this.groupChatBtn_Click);
             // 
             // addGroupBtn
             // 
-            this.addGroupBtn.Animated = true;
-            this.addGroupBtn.AnimatedGIF = true;
             this.addGroupBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.addGroupBtn.BorderRadius = 10;
             this.addGroupBtn.BorderThickness = 2;
@@ -687,7 +686,7 @@
             this.addGroupBtn.Location = new System.Drawing.Point(22, 111);
             this.addGroupBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addGroupBtn.Name = "addGroupBtn";
-            this.addGroupBtn.Size = new System.Drawing.Size(105, 38);
+            this.addGroupBtn.Size = new System.Drawing.Size(110, 38);
             this.addGroupBtn.TabIndex = 2;
             this.addGroupBtn.Text = "Thêm nhóm";
             this.addGroupBtn.Click += new System.EventHandler(this.addGroupBtn_Click);
