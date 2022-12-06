@@ -76,6 +76,7 @@
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.tenUser.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -151,6 +152,7 @@
             this.chatBoxPn.Name = "chatBoxPn";
             this.chatBoxPn.Size = new System.Drawing.Size(761, 532);
             this.chatBoxPn.TabIndex = 8;
+            this.chatBoxPn.UseTransparentBackground = true;
             // 
             // guna2PictureBox5
             // 
@@ -196,7 +198,6 @@
             // 
             // sendBtn
             // 
-            this.sendBtn.Animated = true;
             this.sendBtn.BackColor = System.Drawing.Color.Transparent;
             this.sendBtn.BorderRadius = 6;
             this.guna2Transition1.SetDecoration(this.sendBtn, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -395,6 +396,40 @@
             this.userName_Send.Size = new System.Drawing.Size(100, 23);
             this.userName_Send.TabIndex = 0;
             // 
+            // guna2Panel2
+            // 
+            this.guna2Transition1.SetDecoration(this.addChatPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.addChatPanel.Location = new System.Drawing.Point(0, 0);
+            this.addChatPanel.Name = "addChatPanel";
+            this.addChatPanel.Size = new System.Drawing.Size(200, 100);
+            this.addChatPanel.TabIndex = 10;
+            // 
+            // guna2Button4
+            // 
+            this.guna2Transition1.SetDecoration(this.guna2Button4, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.Location = new System.Drawing.Point(0, 0);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button4.TabIndex = 0;
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Transition1.SetDecoration(this.guna2Panel4, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(200, 100);
+            this.guna2Panel4.TabIndex = 0;
+            // 
+            // userName_Send
+            // 
+            this.guna2Transition1.SetDecoration(this.userName_Send, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.userName_Send.Location = new System.Drawing.Point(0, 0);
+            this.userName_Send.Name = "userName_Send";
+            this.userName_Send.Size = new System.Drawing.Size(100, 23);
+            this.userName_Send.TabIndex = 0;
+            // 
             // tenUser
             // 
             this.tenUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
@@ -531,6 +566,7 @@
             this.Controls.Add(this.tenUser);
             this.Controls.Add(this.guna2Panel1);
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -552,6 +588,7 @@
             this.guna2Panel5.PerformLayout();
             this.tenUser.ResumeLayout(false);
             this.tenUser.PerformLayout();
+            this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);

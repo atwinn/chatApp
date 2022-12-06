@@ -35,6 +35,10 @@ namespace ChatApplication
         private Guna.UI2.WinForms.Guna2GradientPanel recvPn;
         private System.Windows.Forms.Label recvLabel;
         private System.Windows.Forms.Label sendChatLabel;
+        private Guna.UI2.WinForms.Guna2Panel imageContainer;
+        private Guna.UI2.WinForms.Guna2PictureBox imageSend;
+        private Guna.UI2.WinForms.Guna2Panel imageContainer2;
+        private Guna.UI2.WinForms.Guna2PictureBox imageRecv;
         public Form1()
         {
             InitializeComponent();
@@ -609,6 +613,56 @@ namespace ChatApplication
 
        
 
+        private void createImageSend()
+        {
+            imageContainer = new Guna.UI2.WinForms.Guna2Panel();
+            imageSend = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Controls.Add(imageContainer);
+            chatBoxPn.Controls.Add(imageContainer);
+
+            imageContainer.Controls.Add(imageSend);
+            guna2Transition1.SetDecoration(imageContainer, Guna.UI2.AnimatorNS.DecorationType.None);
+            imageContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            imageContainer.Location = new System.Drawing.Point(0, 0);
+            imageContainer.Name = "imageContainer";
+            imageContainer.Size = new System.Drawing.Size(761, 187);
+            imageContainer.TabIndex = 0;
+
+            guna2Transition1.SetDecoration(imageSend, Guna.UI2.AnimatorNS.DecorationType.None);
+            imageSend.ImageRotate = 0F;
+            imageSend.SizeMode = PictureBoxSizeMode.Zoom;
+            imageSend.Location = new System.Drawing.Point(461, 7);
+            imageSend.Name = "imageSend";
+            imageSend.Size = new System.Drawing.Size(262, 171);
+            imageSend.TabIndex = 0;
+            imageSend.TabStop = false;
+        }
+
+        private void createImageRecv()
+        {
+            imageContainer2 = new Guna.UI2.WinForms.Guna2Panel();
+            imageRecv = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Controls.Add(imageContainer2);
+            chatBoxPn.Controls.Add(imageContainer2);
+
+            imageContainer2.Controls.Add(imageRecv);
+            guna2Transition1.SetDecoration(imageContainer2, Guna.UI2.AnimatorNS.DecorationType.None);
+            imageContainer2.Dock = System.Windows.Forms.DockStyle.Top;
+            imageContainer2.Location = new System.Drawing.Point(0, 187);
+            imageContainer2.Name = "imageContainer2";
+            imageContainer2.Size = new System.Drawing.Size(761, 187);
+            imageContainer2.TabIndex = 1;
+
+            guna2Transition1.SetDecoration(imageRecv, Guna.UI2.AnimatorNS.DecorationType.None);
+            imageRecv.ImageRotate = 0F;
+            imageRecv.SizeMode = PictureBoxSizeMode.Zoom;
+            imageRecv.Location = new System.Drawing.Point(35, 8);
+            imageRecv.Name = "imageRecv";
+            imageRecv.Size = new System.Drawing.Size(262, 171);
+            imageRecv.TabIndex = 0;
+            imageRecv.TabStop = false;
+        }
+
         private void sendBtn_Click(object sender, EventArgs e)
         {
 
@@ -643,6 +697,24 @@ namespace ChatApplication
             PanelTong.Controls.Clear();
             MESSAGE.COMMON common = new MESSAGE.COMMON(11, "reload");
             sendJson(common);
+        }
+        int originalExStyle = -1;
+        bool enableFormLevelDoubleBuffering = true;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                if (originalExStyle == -1)
+                    originalExStyle = base.CreateParams.ExStyle;
+
+                CreateParams cp = base.CreateParams;
+                if (enableFormLevelDoubleBuffering)
+                    cp.ExStyle |= 0x02000000;  // WS_EX_COMPOSITED
+                else
+                    cp.ExStyle = originalExStyle;
+
+                return cp;
+            }
         }
     }
 }
