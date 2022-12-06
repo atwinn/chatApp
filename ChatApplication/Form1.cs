@@ -12,6 +12,7 @@ using Microsoft.VisualBasic.Logging;
 using System.Diagnostics;
 using System.Timers;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.IO;
 
 namespace ChatApplication
 {
@@ -24,6 +25,7 @@ namespace ChatApplication
         public bool thoat;
         public Thread trd;
         public string all_user;
+        public string pathGui;
 
         private Guna.UI2.WinForms.Guna2Panel userPn;
         private System.Windows.Forms.Label label2;
@@ -282,26 +284,46 @@ namespace ChatApplication
 
                             break;
                         case 13:
-                            MESSAGE.FILE? obj2 = JsonSerializer.Deserialize<MESSAGE.FILE>(com.content);
-                            if (MessageBox.Show(obj2.usernameSender + " đã gửi một file cho bạn , bạn có muốn nhận không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
-                                string path = "C:/Users/ad/Desktop/nhanFile_Client";
-                                byte[] clientData = new byte[1024 * 5000];
-                                clientData = obj2.file;
-                                int receivedBytesLen = clientData.Length;
-                                int fileNameLen = BitConverter.ToInt32(clientData, 0);
-                                string fileName = Encoding.ASCII.GetString(clientData, 4, fileNameLen);
-                                fileName = fileName.Replace("\\", "/");
-                                while (fileName.IndexOf("/") > -1)
+                                MESSAGE.FILE? obj2 = JsonSerializer.Deserialize<MESSAGE.FILE>(com.content);
+                                if (all_user == obj2.usernameSender)
                                 {
-                                    fileName = fileName.Substring(fileName.IndexOf("/") + 1);
+                                    createImageSend(pathGui);
+                                    chatBoxPn.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(imageContainer)));
+                                    pathGui = "";
                                 }
-                                string link = path + "/" + fileName;
-                                BinaryWriter bWrite = new BinaryWriter(File.Open(link, FileMode.Create));
-                                bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
-                                bWrite.Close();
-                                createSendView(obj2.usernameSender + " send a file to " + obj2.usernameReceiver + " Path: " + path + "/" + fileName);
-                                //AppendTextBox(obj.usernameSender + " send a file to " + obj.usernameReceiver + " Path: " + path + "/" + fileName + Environment.NewLine);
+                                if (all_user == obj2.usernameReceiver)
+                                {
+                                    if (MessageBox.Show(obj2.usernameSender + " đã gửi một file cho bạn , bạn có muốn nhận không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                    {
+
+
+
+                                        string path = "C:/Users/ad/Desktop/nhanFile_Client";
+                                        byte[] clientData = new byte[1024 * 5000];
+                                        clientData = obj2.file;
+                                        int receivedBytesLen = clientData.Length;
+                                        int fileNameLen = BitConverter.ToInt32(clientData, 0);
+                                        string fileName = Encoding.ASCII.GetString(clientData, 4, fileNameLen);
+                                        fileName = fileName.Replace("\\", "/");
+                                        while (fileName.IndexOf("/") > -1)
+                                        {
+                                            fileName = fileName.Substring(fileName.IndexOf("/") + 1);
+                                        }
+                                        string link = path + "/" + fileName;
+                                        BinaryWriter bWrite = new BinaryWriter(File.Open(link, FileMode.Create));
+                                        bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
+                                        bWrite.Close();
+                                        createRecvView(obj2.usernameSender + " đã gửi cho bạn 1 ");
+                                        createImageRecv(link);
+                                        chatBoxPn.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(imageContainer2)));
+                                        //chatBoxPn.ScrollControlIntoView(imageContainer2);
+                                        //createSendView(obj2.usernameSender + " send a file to " + obj2.usernameReceiver + " Path: " + path + "/" + fileName);
+
+
+                                    }
+
+                                }
                             }
 
                             break;
@@ -848,15 +870,19 @@ namespace ChatApplication
             addGroupPanel.Visible = false;
         }
 
-        private void createImageSend()
+        private void createImageSend(string path)
         {
-            imageContainer = new Guna.UI2.WinForms.Guna2Panel();
+            this.Invoke((MethodInvoker)delegate
+            {
+                imageContainer = new Guna.UI2.WinForms.Guna2Panel();
             imageSend = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Controls.Add(imageContainer);
             chatBoxPn.Controls.Add(imageContainer);
 
             imageContainer.Controls.Add(imageSend);
-            guna2Transition1.SetDecoration(imageContainer, Guna.UI2.AnimatorNS.DecorationType.None);
+                imageContainer.BringToFront();
+                guna2Transition1.SetDecoration(imageContainer, Guna.UI2.AnimatorNS.DecorationType.None);
+
             imageContainer.Dock = System.Windows.Forms.DockStyle.Top;
             imageContainer.Location = new System.Drawing.Point(0, 0);
             imageContainer.Name = "imageContainer";
@@ -871,16 +897,22 @@ namespace ChatApplication
             imageSend.Size = new System.Drawing.Size(262, 171);
             imageSend.TabIndex = 0;
             imageSend.TabStop = false;
+                imageSend.Image =Image.FromFile(path);
+            });
         }
 
-        private void createImageRecv()
+        private void createImageRecv(string path)
         {
             imageContainer2 = new Guna.UI2.WinForms.Guna2Panel();
             imageRecv = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Invoke((MethodInvoker)delegate
+            {
+          
             this.Controls.Add(imageContainer2);
             chatBoxPn.Controls.Add(imageContainer2);
 
             imageContainer2.Controls.Add(imageRecv);
+            imageContainer2.BringToFront();
             guna2Transition1.SetDecoration(imageContainer2, Guna.UI2.AnimatorNS.DecorationType.None);
             imageContainer2.Dock = System.Windows.Forms.DockStyle.Top;
             imageContainer2.Location = new System.Drawing.Point(0, 187);
@@ -896,6 +928,8 @@ namespace ChatApplication
             imageRecv.Size = new System.Drawing.Size(262, 171);
             imageRecv.TabIndex = 0;
             imageRecv.TabStop = false;
+                imageRecv.Image = Image.FromFile(path);
+            });
         }
 
         private void sendBtn_Click(object sender, EventArgs e)
@@ -975,6 +1009,7 @@ namespace ChatApplication
                     byte[] fileNameLen = BitConverter.GetBytes(fileNameByte.Length);
                     byte[] fileData = File.ReadAllBytes(path + fileName);
                     byte[] clientData = new byte[4 + fileNameByte.Length + fileData.Length];
+                    pathGui = path + fileName;
                     if (clientData.Length > 1024 * 5000)
                     {
                         new Thread(() =>
