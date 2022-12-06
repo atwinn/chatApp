@@ -13,6 +13,7 @@ using System.Diagnostics;
 using System.Timers;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace ChatApplication
 {
@@ -74,6 +75,7 @@ namespace ChatApplication
                 this.Controls.Add(sendContainer);
                 chatBoxPn.Controls.Add(sendContainer);
                 sendContainer.Controls.Add(sendPn);
+                sendContainer.AutoSize = true;
                 sendContainer.BringToFront();
                 guna2Transition1.SetDecoration(sendContainer, Guna.UI2.AnimatorNS.DecorationType.None);
                 sendContainer.Dock = System.Windows.Forms.DockStyle.Top;
@@ -86,23 +88,28 @@ namespace ChatApplication
                 sendPn.BorderRadius = 6;
                 sendPn.Controls.Add(sendChatLabel);
                 guna2Transition1.SetDecoration(sendPn, Guna.UI2.AnimatorNS.DecorationType.None);
+                sendPn.AutoSize = true;
                 sendPn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
                 sendPn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
                 sendPn.ForeColor = System.Drawing.Color.White;
                 sendPn.Location = new System.Drawing.Point(455, 8);
+                sendPn.Padding = new Padding(0, 0, 0, 15);
                 sendPn.Name = "sendPn";
-                sendPn.Size = new System.Drawing.Size(290, 46);
+                sendPn.Size = new System.Drawing.Size(290, 36);
                 sendPn.TabIndex = 1;
                 sendPn.UseTransparentBackground = true;
-
-                sendChatLabel.AutoSize = true;
+                
                 guna2Transition1.SetDecoration(sendChatLabel, Guna.UI2.AnimatorNS.DecorationType.None);
                 sendChatLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
                 sendChatLabel.Location = new System.Drawing.Point(20, 13);
                 sendChatLabel.Name = "sendChatLabel";
                 sendChatLabel.Size = new System.Drawing.Size(44, 21);
                 sendChatLabel.TabIndex = 0;
+                sendChatLabel.MaximumSize = new System.Drawing.Size(255, 0);
+                sendChatLabel.AutoSize = true;
                 sendChatLabel.Text = mess;
+
+                txtchatbox.Text = "";
 
             });
 
@@ -129,6 +136,7 @@ namespace ChatApplication
                 recvContainer.Controls.Add(recvPn);
 
                 recvContainer.BringToFront();
+                recvContainer.AutoSize = true;
                 guna2Transition1.SetDecoration(recvContainer, Guna.UI2.AnimatorNS.DecorationType.None);
                 recvContainer.Dock = System.Windows.Forms.DockStyle.Top;
                 recvContainer.Location = new System.Drawing.Point(0, 61);
@@ -140,22 +148,25 @@ namespace ChatApplication
                 recvPn.BorderRadius = 6;
                 recvPn.Controls.Add(recvLabel);
                 guna2Transition1.SetDecoration(recvPn, Guna.UI2.AnimatorNS.DecorationType.None);
+                recvPn.AutoSize = true;
                 recvPn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
                 recvPn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
                 recvPn.ForeColor = System.Drawing.Color.White;
                 recvPn.Location = new System.Drawing.Point(14, 8);
+                recvPn.Padding = new Padding(0, 0, 0, 15);
                 recvPn.Name = "recvPn";
-                recvPn.Size = new System.Drawing.Size(290, 46);
+                recvPn.Size = new System.Drawing.Size(290, 36);
                 recvPn.TabIndex = 1;
                 recvPn.UseTransparentBackground = true;
 
-                recvLabel.AutoSize = true;
                 guna2Transition1.SetDecoration(recvLabel, Guna.UI2.AnimatorNS.DecorationType.None);
                 recvLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
                 recvLabel.ForeColor = System.Drawing.Color.Black;
                 recvLabel.Location = new System.Drawing.Point(19, 12);
                 recvLabel.Name = "recvLabel";
                 recvLabel.Size = new System.Drawing.Size(44, 21);
+                recvLabel.MaximumSize = new System.Drawing.Size(255, 0);
+                recvLabel.AutoSize = true;
                 recvLabel.TabIndex = 0;
                 recvLabel.Text = mess;
             });
@@ -186,6 +197,7 @@ namespace ChatApplication
 
                 recvGrContainer.BringToFront();
                 guna2Transition1.SetDecoration(recvGrContainer, Guna.UI2.AnimatorNS.DecorationType.None);
+                recvGrContainer.AutoSize = true;
                 recvGrContainer.Dock = System.Windows.Forms.DockStyle.Top;
                 recvGrContainer.Location = new System.Drawing.Point(0, 61);
                 recvGrContainer.Name = "recvContainer";
@@ -196,22 +208,25 @@ namespace ChatApplication
                 recvGrPn.BorderRadius = 6;
                 recvGrPn.Controls.Add(recvLabel);
                 guna2Transition1.SetDecoration(recvGrLabel, Guna.UI2.AnimatorNS.DecorationType.None);
+                recvGrPn.AutoSize = true;
                 recvGrPn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
                 recvGrPn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
                 recvGrPn.ForeColor = System.Drawing.Color.White;
                 recvGrPn.Location = new System.Drawing.Point(14, 20);
                 recvGrPn.Name = "recvPn";
-                recvGrPn.Size = new System.Drawing.Size(290, 46);
+                recvGrPn.Padding = new Padding(0, 0, 0, 15);
+                recvGrPn.Size = new System.Drawing.Size(290, 36);
                 recvGrPn.TabIndex = 1;
                 recvGrPn.UseTransparentBackground = true;
 
-                recvGrLabel.AutoSize = true;
                 guna2Transition1.SetDecoration(recvGrLabel, Guna.UI2.AnimatorNS.DecorationType.None);
                 recvGrLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
                 recvGrLabel.ForeColor = System.Drawing.Color.Black;
                 recvGrLabel.Location = new System.Drawing.Point(19, 12);
                 recvGrLabel.Name = "recvLabel";
                 recvGrLabel.Size = new System.Drawing.Size(44, 21);
+                recvGrLabel.MaximumSize = new System.Drawing.Size(255, 0);
+                recvGrLabel.AutoSize = true;
                 recvGrLabel.TabIndex = 0;
                 recvGrLabel.Text = mess;
             });
@@ -1139,6 +1154,12 @@ namespace ChatApplication
         {
             string i = listView1.SelectedItems[0].Text;
             txtchatbox.Text += i;
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && chatPanel.Visible == true)
+                sendBtn.PerformClick();
         }
     }
 }

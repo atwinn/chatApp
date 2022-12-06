@@ -302,11 +302,12 @@
             this.txtchatbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
             this.txtchatbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.guna2Transition1.SetDecoration(this.txtchatbox, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.txtchatbox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtchatbox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtchatbox.ForeColor = System.Drawing.Color.White;
             this.txtchatbox.Location = new System.Drawing.Point(0, 562);
             this.txtchatbox.Multiline = true;
             this.txtchatbox.Name = "txtchatbox";
+            this.txtchatbox.PlaceholderText = "Nhắn gì đó....";
             this.txtchatbox.Size = new System.Drawing.Size(638, 42);
             this.txtchatbox.TabIndex = 5;
             // 
@@ -755,10 +756,12 @@
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.guna2Panel1.ResumeLayout(false);
             this.chattingUnPn.ResumeLayout(false);
             this.chattingUnPn.PerformLayout();

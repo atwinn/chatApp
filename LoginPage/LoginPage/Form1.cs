@@ -210,5 +210,10 @@ namespace LoginPage
             trd.Start();
         }
 
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                login.PerformClick();
+        }
     }
 }
