@@ -21,7 +21,7 @@ namespace LoginPage
         Socket client;
         bool thoat = false;
         Thread trd;
-        private string ipAdd = "192.168.141.85";
+        private string ipAdd = "172.20.10.7";
         public Form1()
         {
             InitializeComponent();
@@ -209,5 +209,6 @@ namespace LoginPage
             trd.IsBackground = true;
             trd.Start();
         }
+
     }
 }

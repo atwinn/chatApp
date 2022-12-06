@@ -20,7 +20,7 @@ namespace ChatApplication
         public IPEndPoint iep;
         public Socket server;
         public Socket client;
-        public bool thoat ;
+        public bool thoat;
         public Thread trd;
         public string all_user;
 
@@ -58,7 +58,8 @@ namespace ChatApplication
             sendChatLabel = new System.Windows.Forms.Label();
 
             //this.Controls.Add(sendContainer);
-            this.Invoke((MethodInvoker) delegate { 
+            this.Invoke((MethodInvoker)delegate
+            {
                 this.Controls.Add(sendContainer);
                 chatBoxPn.Controls.Add(sendContainer);
                 sendContainer.Controls.Add(sendPn);
@@ -98,10 +99,10 @@ namespace ChatApplication
             //this.Invoke((MethodInvoker)(() => chatBoxPn.Controls.Add(sendContainer)));
 
             //sendContainer.Controls.Add(sendPn);
-           // this.Invoke((MethodInvoker)(() => chatBoxPn.Controls.Add(sendContainer)));
+            // this.Invoke((MethodInvoker)(() => chatBoxPn.Controls.Add(sendContainer)));
 
 
-            
+
         }
 
         private void createRecvView(string mess)
@@ -109,7 +110,7 @@ namespace ChatApplication
             recvContainer = new Guna2Panel();
             recvPn = new Guna2GradientPanel();
             recvLabel = new System.Windows.Forms.Label();
-            this.Invoke((MethodInvoker) delegate 
+            this.Invoke((MethodInvoker)delegate
             {
                 this.Controls.Add(recvContainer);
                 chatBoxPn.Controls.Add(recvContainer);
@@ -146,7 +147,7 @@ namespace ChatApplication
                 recvLabel.TabIndex = 0;
                 recvLabel.Text = mess;
             });
-                
+
         }
         public void vonglap()
         {
@@ -180,7 +181,7 @@ namespace ChatApplication
                                     chatBoxPn.ScrollControlIntoView(recvContainer);
                                 }
                             }
-                            
+
                             //createRecvView()
                             //AppendTextBox(mes.usernameSender + ":" + mes.content);
                             break;
@@ -211,9 +212,9 @@ namespace ChatApplication
                                 MESSAGE.DAU? obj = JsonSerializer.Deserialize<MESSAGE.DAU>(com.content);
                                 createUserPanel_thread(obj.user, obj.DSClient);
                             }
-                            
+
                             break;
-                       
+
                     }
 
                 }
@@ -241,11 +242,11 @@ namespace ChatApplication
 
         public void createUserPanel(List<string> DS_member, List<string> DSClient)
         {
-            
+
             int x = 0;
-            foreach(string s in DS_member) 
+            foreach (string s in DS_member)
             {
-                if(DSClient.Contains(s))
+                if (DSClient.Contains(s))
                 {
                     userPn = new Guna.UI2.WinForms.Guna2Panel();
 
@@ -315,7 +316,7 @@ namespace ChatApplication
                     userPn.Click += new System.EventHandler((sender, e) => this.userPn_Click(sender, e, s));
                     //userPn.Click += new System.EventHandler(this.userPn_Click);
                     //chattingUN.Text = s;
-                }    
+                }
                 else
                 {
                     userPn = new Guna.UI2.WinForms.Guna2Panel();
@@ -384,8 +385,8 @@ namespace ChatApplication
                     //userPn.Click += new System.EventHandler(this.userPn_Click);
                     userPn.Click += new System.EventHandler((sender, e) => this.userPn_Click(sender, e, s));
                     //chattingUN.Text = s;
-                }    
-                
+                }
+
             }
         }
 
@@ -400,7 +401,8 @@ namespace ChatApplication
                     userPn = new Guna.UI2.WinForms.Guna2Panel();
 
 
-                    this.Invoke((MethodInvoker)delegate {
+                    this.Invoke((MethodInvoker)delegate
+                    {
 
                         this.Controls.Add(userPn);
                         PanelTong.Controls.Add(userPn);
@@ -470,11 +472,12 @@ namespace ChatApplication
                         //chattingUN.Text = s;
                     });
 
-                    
+
                 }
                 else
                 {
-                    this.Invoke((MethodInvoker)delegate {
+                    this.Invoke((MethodInvoker)delegate
+                    {
 
                         userPn = new Guna.UI2.WinForms.Guna2Panel();
                         this.Controls.Add(userPn);
@@ -545,7 +548,7 @@ namespace ChatApplication
                     });
 
 
-                    
+
                 }
 
             }
@@ -569,12 +572,12 @@ namespace ChatApplication
             Form frm = Application.OpenForms["Form1"];
             frm.Invoke((MethodInvoker)(() => frm.Close()));
         }
-        
+
         private void logout_Click(object sender, EventArgs e)
         {
             //thoat = true;
-            
-            
+
+
             MESSAGE.COMMON common = new MESSAGE.COMMON(4, all_user);
             sendJson(common);
             thoat = true;
@@ -611,7 +614,7 @@ namespace ChatApplication
             addGroupPanel.Visible = false;
         }
 
-       
+
 
         private void createImageSend()
         {
@@ -672,18 +675,18 @@ namespace ChatApplication
             MESSAGE.COMMON common = new MESSAGE.COMMON(2, jsonString);
             sendJson(common);
 
-            
+
             //createSendView();
             //createRecvView("hello");
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // vonglap();
-            Thread trd1 = new Thread(new ThreadStart(this.vonglap));
-            trd1.IsBackground = true;
-           trd1.Start();
+            //Thread trd1 = new Thread(new ThreadStart(this.vonglap));
+            //trd1.IsBackground = true;
+            //trd1.Start();
         }
 
         private void chattingUN_Click(object sender, EventArgs e)
@@ -715,6 +718,36 @@ namespace ChatApplication
 
                 return cp;
             }
+        }
+
+        private void guna2PictureBox5_Click(object sender, EventArgs e)
+        {
+
+            if (listViewIcon.Visible == true)
+            {
+                listViewIcon.Visible = false;
+            }
+            else
+            {
+                listViewIcon.Visible = true;
+                string[] icons = { "D83DDE01", "D83DDE02", "D83DDE03", "D83DDE04", "D83DDE05", "D83DDE06", "D83DDE07", "D83DDE08", "D83DDE09", "D83DDE10", "D83DDE11", "D83DDE12", "D83DDE13", "D83DDE14", "D83DDE15", "D83DDE16", "D83DDE17", "D83DDE18", "D83DDE19", "D83DDE20" };
+                for (int i = 0; i < icons.Length; i++)
+                {
+                    listViewIcon.Items[i].Text = ParseUnicodeHex(icons[i]);
+                }
+
+            }
+        }
+        string ParseUnicodeHex(string hex)
+        {
+            var sb = new StringBuilder();
+            for (int i = 0; i < hex.Length; i += 4)
+            {
+                string temp = hex.Substring(i, 4);
+                char character = (char)Convert.ToInt16(temp, 16);
+                sb.Append(character);
+            }
+            return sb.ToString();
         }
     }
 }
