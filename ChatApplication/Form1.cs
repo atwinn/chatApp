@@ -242,12 +242,12 @@ namespace ChatApplication
                                 if (all_user == mes.usernameSender)
                                 {
                                     createSendView(mes.content);
-                                    chatBoxPn.ScrollControlIntoView(sendContainer);
+                                    this.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(sendContainer)));
                                 }
                                 else
                                 {
                                     createRecvView(mes.content);
-                                    chatBoxPn.ScrollControlIntoView(recvContainer);
+                                    this.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(recvContainer)));
                                 }
                             }
 
@@ -346,10 +346,10 @@ namespace ChatApplication
             PanelTong.BringToFront();
             PanelTong.AutoScroll = true;
             guna2Transition1.SetDecoration(PanelTong, Guna.UI2.AnimatorNS.DecorationType.None);
-            PanelTong.Location = new System.Drawing.Point(3, 174);
+            PanelTong.Location = new System.Drawing.Point(3, 190);
             PanelTong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
             PanelTong.Name = "panelTong";
-            PanelTong.Size = new System.Drawing.Size(258, 432);
+            PanelTong.Size = new System.Drawing.Size(258, 410);
             PanelTong.TabIndex = 4;
         }
 
