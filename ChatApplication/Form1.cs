@@ -1102,5 +1102,4 @@ namespace ChatApplication
             string i = listView1.SelectedItems[0].Text;
             txtchatbox.Text += i;
         }
-    }
 }
