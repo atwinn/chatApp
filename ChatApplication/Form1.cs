@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Microsoft.VisualBasic.Logging;
 using System.Diagnostics;
 using System.Timers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ChatApplication
 {
@@ -566,7 +567,8 @@ namespace ChatApplication
                     groupPn = new Guna.UI2.WinForms.Guna2Panel();
 
 
-                    this.Invoke((MethodInvoker)delegate {
+                    this.Invoke((MethodInvoker)delegate
+                    {
 
                         this.Controls.Add(groupPn);
                         PanelTong.Controls.Add(groupPn);
@@ -640,7 +642,8 @@ namespace ChatApplication
                 }
                 else
                 {
-                    this.Invoke((MethodInvoker)delegate {
+                    this.Invoke((MethodInvoker)delegate
+                    {
 
                         this.Controls.Add(groupPn);
                         PanelTong.Controls.Add(groupPn);
@@ -886,18 +889,18 @@ namespace ChatApplication
 
         private void guna2PictureBox5_Click(object sender, EventArgs e)
         {
-
-            if (listViewIcon.Visible == true)
+            //MessageBox.Show("a");
+            if (listView1.Visible == true)
             {
-                listViewIcon.Visible = false;
+                listView1.Visible = false;
             }
             else
             {
-                listViewIcon.Visible = true;
+                listView1.Visible = true;
                 string[] icons = { "D83DDE01", "D83DDE02", "D83DDE03", "D83DDE04", "D83DDE05", "D83DDE06", "D83DDE07", "D83DDE08", "D83DDE09", "D83DDE10", "D83DDE11", "D83DDE12", "D83DDE13", "D83DDE14", "D83DDE15", "D83DDE16", "D83DDE17", "D83DDE18", "D83DDE19", "D83DDE20" };
                 for (int i = 0; i < icons.Length; i++)
                 {
-                    listViewIcon.Items[i].Text = ParseUnicodeHex(icons[i]);
+                    listView1.Items[i].Text = ParseUnicodeHex(icons[i]);
                 }
 
             }
@@ -921,11 +924,23 @@ namespace ChatApplication
                 groupChatBtn.FillColor = Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
                 PanelTong.Controls.Clear();
                 //createGroupPanel_thread();
-            } else
+            }
+            else
             {
-                groupChatBtn.FillColor = Color.FromArgb( ((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+                groupChatBtn.FillColor = Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
                 PanelTong.Controls.Clear();
             }
+        }
+
+        private void chatBoxPn_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void emoji_list_MouseClick(object sender, MouseEventArgs e)
+        {
+            string i = listView1.SelectedItems[0].Text;
+            txtchatbox.Text += i;
         }
     }
 }

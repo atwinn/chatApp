@@ -29,7 +29,50 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("sdjkfhsdkfsjk");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
+            ""}, -1, System.Drawing.SystemColors.InactiveBorder, System.Drawing.SystemColors.InactiveCaptionText, new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point));
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem34 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem(new string[] {
+            ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point));
             Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -37,8 +80,8 @@
             this.chattingUnPn = new Guna.UI2.WinForms.Guna2Panel();
             this.chattingUN = new System.Windows.Forms.Label();
             this.chatPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.chatBoxPn = new Guna.UI2.WinForms.Guna2Panel();
-            this.listViewIcon = new System.Windows.Forms.ListView();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -136,6 +179,7 @@
             // chatPanel
             // 
             this.chatPanel.BackColor = System.Drawing.Color.Transparent;
+            this.chatPanel.Controls.Add(this.listView1);
             this.chatPanel.Controls.Add(this.chatBoxPn);
             this.chatPanel.Controls.Add(this.guna2PictureBox5);
             this.chatPanel.Controls.Add(this.guna2PictureBox4);
@@ -152,6 +196,39 @@
             this.chatPanel.UseTransparentBackground = true;
             this.chatPanel.Visible = false;
             // 
+            // listView1
+            // 
+            this.guna2Transition1.SetDecoration(this.listView1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19,
+            listViewItem20,
+            listViewItem21});
+            this.listView1.Location = new System.Drawing.Point(29, 589);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(229, 121);
+            this.listView1.TabIndex = 9;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.Visible = false;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.emoji_list_MouseClick);
+            // 
             // chatBoxPn
             // 
             this.chatBoxPn.AutoScroll = true;
@@ -162,17 +239,7 @@
             this.chatBoxPn.Size = new System.Drawing.Size(761, 540);
             this.chatBoxPn.TabIndex = 8;
             this.chatBoxPn.UseTransparentBackground = true;
-            // 
-            // listViewIcon
-            // 
-            this.guna2Transition1.SetDecoration(this.listViewIcon, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.listViewIcon.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.listViewIcon.Location = new System.Drawing.Point(-1, 455);
-            this.listViewIcon.Name = "listViewIcon";
-            this.listViewIcon.Size = new System.Drawing.Size(284, 213);
-            this.listViewIcon.TabIndex = 0;
-            this.listViewIcon.UseCompatibleStateImageBehavior = false;
+            this.chatBoxPn.Paint += new System.Windows.Forms.PaintEventHandler(this.chatBoxPn_Paint);
             // 
             // guna2PictureBox5
             // 
@@ -248,11 +315,35 @@
             this.emoji_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.guna2Transition1.SetDecoration(this.emoji_list, Guna.UI2.AnimatorNS.DecorationType.None);
             this.emoji_list.ForeColor = System.Drawing.Color.White;
+            this.emoji_list.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem22,
+            listViewItem23,
+            listViewItem24,
+            listViewItem25,
+            listViewItem26,
+            listViewItem27,
+            listViewItem28,
+            listViewItem29,
+            listViewItem30,
+            listViewItem31,
+            listViewItem32,
+            listViewItem33,
+            listViewItem34,
+            listViewItem35,
+            listViewItem36,
+            listViewItem37,
+            listViewItem38,
+            listViewItem39,
+            listViewItem40,
+            listViewItem41,
+            listViewItem42});
             this.emoji_list.Location = new System.Drawing.Point(0, 372);
             this.emoji_list.Name = "emoji_list";
-            this.emoji_list.Size = new System.Drawing.Size(279, 157);
+            this.emoji_list.Size = new System.Drawing.Size(361, 157);
             this.emoji_list.TabIndex = 0;
             this.emoji_list.UseCompatibleStateImageBehavior = false;
+            this.emoji_list.Visible = false;
+            this.emoji_list.MouseClick += new System.Windows.Forms.MouseEventHandler(this.emoji_list_MouseClick);
             // 
             // txtchatbox
             // 
@@ -440,13 +531,12 @@
             this.guna2Transition1.SetDecoration(this.userName_Send, Guna.UI2.AnimatorNS.DecorationType.None);
             this.userName_Send.Location = new System.Drawing.Point(0, 0);
             this.userName_Send.Name = "userName_Send";
-            this.userName_Send.Size = new System.Drawing.Size(100, 23);
+            this.userName_Send.Size = new System.Drawing.Size(100, 27);
             this.userName_Send.TabIndex = 0;
             // 
             // tenUser
             // 
             this.tenUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.tenUser.Controls.Add(this.listViewIcon);
             this.tenUser.Controls.Add(this.btnReload);
             this.tenUser.Controls.Add(this.label_ten);
             this.tenUser.Controls.Add(this.logout);
@@ -489,7 +579,7 @@
             this.label_ten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
             this.label_ten.Location = new System.Drawing.Point(67, 616);
             this.label_ten.Name = "label_ten";
-            this.label_ten.Size = new System.Drawing.Size(76, 30);
+            this.label_ten.Size = new System.Drawing.Size(96, 37);
             this.label_ten.TabIndex = 4;
             this.label_ten.Text = "label1";
             // 
@@ -703,5 +793,6 @@
         private Guna.UI2.WinForms.Guna2Button addMemberBtn;
         private Guna.UI2.WinForms.Guna2Button groupChatBtn;
         private ListView emoji_list;
+        private ListView listView1;
     }
 }
