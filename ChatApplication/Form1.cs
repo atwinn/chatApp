@@ -27,6 +27,7 @@ namespace ChatApplication
         public Thread trd;
         public string all_user;
         public string pathGui;
+        public string nameFileGui;
 
         private Guna.UI2.WinForms.Guna2Panel userPn;
         private System.Windows.Forms.Label label2;
@@ -329,11 +330,53 @@ namespace ChatApplication
                                         BinaryWriter bWrite = new BinaryWriter(File.Open(link, FileMode.Create));
                                         bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
                                         bWrite.Close();
-                                        createRecvView(obj2.usernameSender + " đã gửi cho bạn 1 ");
+                                        createRecvView(obj2.usernameSender + " đã gửi cho bạn 1 file ảnh");
                                         createImageRecv(link);
                                         chatBoxPn.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(imageContainer2)));
                                         //chatBoxPn.ScrollControlIntoView(imageContainer2);
                                         //createSendView(obj2.usernameSender + " send a file to " + obj2.usernameReceiver + " Path: " + path + "/" + fileName);
+
+
+                                    }
+
+                                }
+                            }
+
+                            break;
+                        case 14:
+                            {
+                                MESSAGE.FILE? obj2 = JsonSerializer.Deserialize<MESSAGE.FILE>(com.content);
+                                if (all_user == obj2.usernameSender)
+                                {
+                                    createSendView(nameFileGui);
+                                    //createImageSend(pathGui);
+                                    //chatBoxPn.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(imageContainer)));
+                                    nameFileGui = "";
+                                }
+                                if (all_user == obj2.usernameReceiver)
+                                {
+                                    if (MessageBox.Show(obj2.usernameSender + " đã gửi một file cho bạn , bạn có muốn nhận không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                    {
+
+
+
+                                        string path = "C:/Users/ad/Desktop/nhanFile_Client";
+                                        byte[] clientData = new byte[1024 * 5000];
+                                        clientData = obj2.file;
+                                        int receivedBytesLen = clientData.Length;
+                                        int fileNameLen = BitConverter.ToInt32(clientData, 0);
+                                        string fileName = Encoding.ASCII.GetString(clientData, 4, fileNameLen);
+                                        fileName = fileName.Replace("\\", "/");
+                                        while (fileName.IndexOf("/") > -1)
+                                        {
+                                            fileName = fileName.Substring(fileName.IndexOf("/") + 1);
+                                        }
+                                        string link = path + "/" + fileName;
+                                        BinaryWriter bWrite = new BinaryWriter(File.Open(link, FileMode.Create));
+                                        bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
+                                        bWrite.Close();
+                                        createRecvView(obj2.usernameSender + " đã gửi cho bạn 1 file ");
+                                        createRecvView("File được lưu vào đường dẫn:"+path);
 
 
                                     }
@@ -1024,6 +1067,63 @@ namespace ChatApplication
                     byte[] fileNameLen = BitConverter.GetBytes(fileNameByte.Length);
                     byte[] fileData = File.ReadAllBytes(path + fileName);
                     byte[] clientData = new byte[4 + fileNameByte.Length + fileData.Length];
+                    nameFileGui = fileName;
+                    if (clientData.Length > 1024 * 5000)
+                    {
+                        new Thread(() =>
+                        {
+                            MessageBox.Show(" Kích thước file không được lớn hơn 5mb ");
+                        }).Start();
+                    }
+                    else
+                    {
+                        fileNameLen.CopyTo(clientData, 0);
+                        fileNameByte.CopyTo(clientData, 4);
+                        fileData.CopyTo(clientData, 4 + fileNameByte.Length);
+                        new Thread(() =>
+                        {
+                            MESSAGE.FILE file = new MESSAGE.FILE(all_user, chattingUN.Text, clientData);
+                            string jsonString = JsonSerializer.Serialize(file);
+                            MESSAGE.COMMON common = new MESSAGE.COMMON(9, jsonString);
+                            sendJson(common);
+                        }).Start();
+
+
+
+
+                    }
+                }
+            }));
+
+            // Run your code from a thread that joins the STA Thread
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+        }
+        private void guna2PictureBox4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            Thread t = new Thread((ThreadStart)(() =>
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+                    //namepath.Text = filePath;
+                    //textBox2.Text = Path.GetFileName(openFileDialog.FileName);
+                    var fileStream = openFileDialog.OpenFile();
+                    string path = "";
+                    filePath = filePath.Replace("\\", "/");
+                    while (filePath.IndexOf("/") > -1)
+                    {
+                        path += filePath.Substring(0, filePath.IndexOf("/") + 1);
+                        filePath = filePath.Substring(filePath.IndexOf("/") + 1);
+                    }
+                    string fileName = filePath;// "c:\\filetosend.txt";
+                    byte[] fileNameByte = Encoding.ASCII.GetBytes(fileName);
+                    byte[] fileNameLen = BitConverter.GetBytes(fileNameByte.Length);
+                    byte[] fileData = File.ReadAllBytes(path + fileName);
+                    byte[] clientData = new byte[4 + fileNameByte.Length + fileData.Length];
+                    
                     pathGui = path + fileName;
                     if (clientData.Length > 1024 * 5000)
                     {
