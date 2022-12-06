@@ -1052,7 +1052,7 @@ namespace ChatApplication
                     byte[] fileNameLen = BitConverter.GetBytes(fileNameByte.Length);
                     byte[] fileData = File.ReadAllBytes(path + fileName);
                     byte[] clientData = new byte[4 + fileNameByte.Length + fileData.Length];
-                    pathGui = path + fileName;
+                    nameFileGui = fileName;
                     if (clientData.Length > 1024 * 5000)
                     {
                         new Thread(() =>
@@ -1108,8 +1108,8 @@ namespace ChatApplication
                     byte[] fileNameLen = BitConverter.GetBytes(fileNameByte.Length);
                     byte[] fileData = File.ReadAllBytes(path + fileName);
                     byte[] clientData = new byte[4 + fileNameByte.Length + fileData.Length];
+                    
                     pathGui = path + fileName;
-                    nameFileGui = fileName;
                     if (clientData.Length > 1024 * 5000)
                     {
                         new Thread(() =>
