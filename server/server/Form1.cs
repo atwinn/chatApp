@@ -840,6 +840,9 @@ namespace server
                                         Socket friend = DSClient[obj.usernameReceiver];
                                         byte[] jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(com);
                                         friend.Send(jsonUtf8Bytes, jsonUtf8Bytes.Length, SocketFlags.None);
+
+                                        Socket my = DSClient[obj.usernameSender];
+                                        my.Send(jsonUtf8Bytes, jsonUtf8Bytes.Length, SocketFlags.None);
                                     }
                                     else//Nhom
                                     {
@@ -866,6 +869,100 @@ namespace server
                                                 MESSAGE.FILE file = new MESSAGE.FILE(obj.usernameSender, obj.usernameReceiver, clientData);
                                                 string datagui = JsonSerializer.Serialize(file);
                                                 com = new COMMON(13, datagui);
+                                                byte[] jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(com);
+                                                AppendTextBox(obj.usernameSender + " send file to Group " + obj.usernameReceiver + " content: " + fileName + Environment.NewLine);
+                                                foreach (String user in DSNhom[obj.usernameReceiver])
+                                                {
+
+
+                                                    if (DSClient.Keys.Contains(user))
+                                                    {
+                                                        Socket friend = DSClient[user];
+                                                        friend.Send(jsonUtf8Bytes, jsonUtf8Bytes.Length, SocketFlags.None);
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                com = new COMMON(10, "CANCEL");
+                                                sendJson(client, com);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            com = new COMMON(11, "CANCEL");
+                                            sendJson(client, com);
+                                        }
+
+                                    }
+
+
+                                   
+                                    //Phản hồi về người gửi
+                                    /*  com = new COMMON(9, "OK");
+                                      sendJson(client, com);*/
+
+                                }
+                                break;
+                            case 9: //Gửi File
+                                {
+                                    MESSAGE.FILE? obj = JsonSerializer.Deserialize<MESSAGE.FILE>(com.content);
+                                    if (DSClient.Keys.Contains(obj.usernameReceiver))
+                                    {
+
+                                        string path = "C:/Users/ad/Desktop/nhanFile_Server";
+
+                                        byte[] clientData = new byte[1024 * 5000];
+                                        clientData = obj.file;
+                                        int receivedBytesLen = clientData.Length;
+                                        int fileNameLen = BitConverter.ToInt32(clientData, 0);
+                                        string fileName = Encoding.ASCII.GetString(clientData, 4, fileNameLen);
+                                        fileName = fileName.Replace("\\", "/");
+                                        while (fileName.IndexOf("/") > -1)
+                                        {
+                                            fileName = fileName.Substring(fileName.IndexOf("/") + 1);
+                                        }
+                                        BinaryWriter bWrite = new BinaryWriter(File.Open(path + "/" + fileName, FileMode.Create));
+                                        bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
+                                        bWrite.Close();
+
+                                        AppendTextBox(obj.usernameSender + " send a file to " + obj.usernameReceiver + " content: " + fileName + Environment.NewLine);
+                                        //Gửi cho người nhận
+                                        MESSAGE.FILE file = new MESSAGE.FILE(obj.usernameSender, obj.usernameReceiver, clientData);
+                                        string datagui = JsonSerializer.Serialize(file);
+                                        com = new COMMON(14, datagui);
+                                        Socket friend = DSClient[obj.usernameReceiver];
+                                        byte[] jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(com);
+                                        friend.Send(jsonUtf8Bytes, jsonUtf8Bytes.Length, SocketFlags.None);
+
+                                        Socket my = DSClient[obj.usernameSender];
+                                        my.Send(jsonUtf8Bytes, jsonUtf8Bytes.Length, SocketFlags.None);
+                                    }
+                                    else//Nhom
+                                    {
+                                        if (DSNhom.Keys.Contains(obj.usernameReceiver))
+                                        {
+                                            if (DSNhom[obj.usernameReceiver].Contains(obj.usernameSender))
+                                            {
+
+                                                byte[] clientData = new byte[1024 * 5000];
+                                                clientData = obj.file;
+                                                int receivedBytesLen = clientData.Length;
+                                                int fileNameLen = BitConverter.ToInt32(clientData, 0);
+                                                string fileName = Encoding.ASCII.GetString(clientData, 4, fileNameLen);
+                                                fileName = fileName.Replace("\\", "/");
+                                                while (fileName.IndexOf("/") > -1)
+                                                {
+                                                    fileName = fileName.Substring(fileName.IndexOf("/") + 1);
+                                                }
+                                                string path = "C:/Users/ad/Desktop/nhanFile_Server";
+                                                BinaryWriter bWrite = new BinaryWriter(File.Open(path + "/" + fileName, FileMode.Create));
+                                                bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
+                                                bWrite.Close();
+
+                                                MESSAGE.FILE file = new MESSAGE.FILE(obj.usernameSender, obj.usernameReceiver, clientData);
+                                                string datagui = JsonSerializer.Serialize(file);
+                                                com = new COMMON(14, datagui);
                                                 byte[] jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(com);
                                                 AppendTextBox(obj.usernameSender + " send file to Group " + obj.usernameReceiver + " content: " + fileName + Environment.NewLine);
                                                 foreach (String user in DSNhom[obj.usernameReceiver])
