@@ -120,7 +120,7 @@ namespace ChatApplication
             recvPn = new Guna2GradientPanel();
             recvLabel = new System.Windows.Forms.Label();
             recvUnLabel = new System.Windows.Forms.Label();
-            this.Invoke((MethodInvoker) delegate 
+            this.Invoke((MethodInvoker)delegate
             {
                 this.Controls.Add(recvContainer);
                 chatBoxPn.Controls.Add(recvContainer);
@@ -1102,4 +1102,5 @@ namespace ChatApplication
             string i = listView1.SelectedItems[0].Text;
             txtchatbox.Text += i;
         }
+    }
 }
