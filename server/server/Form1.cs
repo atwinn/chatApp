@@ -733,7 +733,6 @@ namespace server
                                         }
 
                                     }
-                                }
                                 break;
                             case 4:
                                 {

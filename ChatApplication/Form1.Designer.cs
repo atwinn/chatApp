@@ -76,7 +76,6 @@
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.tenUser.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -588,7 +587,6 @@
             this.guna2Panel5.PerformLayout();
             this.tenUser.ResumeLayout(false);
             this.tenUser.PerformLayout();
-            this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
