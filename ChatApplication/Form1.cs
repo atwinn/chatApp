@@ -914,34 +914,35 @@ namespace ChatApplication
         private void guna2PictureBox3_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            Thread t = new Thread((ThreadStart)(() => {
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            Thread t = new Thread((ThreadStart)(() =>
             {
-                string filePath = openFileDialog.FileName;
-                //namepath.Text = filePath;
-                //textBox2.Text = Path.GetFileName(openFileDialog.FileName);
-                var fileStream = openFileDialog.OpenFile();
-                string path = "";
-                filePath = filePath.Replace("\\", "/");
-                while (filePath.IndexOf("/") > -1)
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    path += filePath.Substring(0, filePath.IndexOf("/") + 1);
-                    filePath = filePath.Substring(filePath.IndexOf("/") + 1);
-                }
-                string fileName = filePath;// "c:\\filetosend.txt";
-                byte[] fileNameByte = Encoding.ASCII.GetBytes(fileName);
-                byte[] fileNameLen = BitConverter.GetBytes(fileNameByte.Length);
-                byte[] fileData = File.ReadAllBytes(path + fileName);
-                byte[] clientData = new byte[4 + fileNameByte.Length + fileData.Length];
-                if (clientData.Length > 1024 * 5000)
-                {
-                    MessageBox.Show(" Kích thước file không được lớn hơn 5mb ");
-                }
-                else
-                {
-                    fileNameLen.CopyTo(clientData, 0);
-                    fileNameByte.CopyTo(clientData, 4);
-                    fileData.CopyTo(clientData, 4 + fileNameByte.Length);
+                    string filePath = openFileDialog.FileName;
+                    //namepath.Text = filePath;
+                    //textBox2.Text = Path.GetFileName(openFileDialog.FileName);
+                    var fileStream = openFileDialog.OpenFile();
+                    string path = "";
+                    filePath = filePath.Replace("\\", "/");
+                    while (filePath.IndexOf("/") > -1)
+                    {
+                        path += filePath.Substring(0, filePath.IndexOf("/") + 1);
+                        filePath = filePath.Substring(filePath.IndexOf("/") + 1);
+                    }
+                    string fileName = filePath;// "c:\\filetosend.txt";
+                    byte[] fileNameByte = Encoding.ASCII.GetBytes(fileName);
+                    byte[] fileNameLen = BitConverter.GetBytes(fileNameByte.Length);
+                    byte[] fileData = File.ReadAllBytes(path + fileName);
+                    byte[] clientData = new byte[4 + fileNameByte.Length + fileData.Length];
+                    if (clientData.Length > 1024 * 5000)
+                    {
+                        MessageBox.Show(" Kích thước file không được lớn hơn 5mb ");
+                    }
+                    else
+                    {
+                        fileNameLen.CopyTo(clientData, 0);
+                        fileNameByte.CopyTo(clientData, 4);
+                        fileData.CopyTo(clientData, 4 + fileNameByte.Length);
                         new Thread(() =>
                         {
                             MESSAGE.FILE file = new MESSAGE.FILE(all_user, chattingUN.Text, clientData);
@@ -949,18 +950,19 @@ namespace ChatApplication
                             MESSAGE.COMMON common = new MESSAGE.COMMON(8, jsonString);
                             sendJson(common);
                         }).Start();
-                      
+
 
 
 
                     }
-            }
+                }
             }));
 
             // Run your code from a thread that joins the STA Thread
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
             t.Join();
+        }
         private void guna2PictureBox5_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("a");
@@ -1016,5 +1018,4 @@ namespace ChatApplication
             string i = listView1.SelectedItems[0].Text;
             txtchatbox.Text += i;
         }
-    }
 }
