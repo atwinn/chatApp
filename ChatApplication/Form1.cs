@@ -38,6 +38,10 @@ namespace ChatApplication
         private Guna.UI2.WinForms.Guna2Panel recvContainer;
         private Guna.UI2.WinForms.Guna2GradientPanel recvPn;
         private System.Windows.Forms.Label recvLabel;
+        private System.Windows.Forms.Label recvUnLabel;
+        private Guna.UI2.WinForms.Guna2Panel recvGrContainer;
+        private Guna.UI2.WinForms.Guna2GradientPanel recvGrPn;
+        private System.Windows.Forms.Label recvGrLabel;
         private System.Windows.Forms.Label sendChatLabel;
         private Guna.UI2.WinForms.Guna2Panel imageContainer;
         private Guna.UI2.WinForms.Guna2PictureBox imageSend;
@@ -113,6 +117,7 @@ namespace ChatApplication
             recvContainer = new Guna2Panel();
             recvPn = new Guna2GradientPanel();
             recvLabel = new System.Windows.Forms.Label();
+            recvUnLabel = new System.Windows.Forms.Label();
             this.Invoke((MethodInvoker) delegate 
             {
                 this.Controls.Add(recvContainer);
@@ -152,6 +157,63 @@ namespace ChatApplication
             });
                 
         }
+
+        private void createGroupRecvView(string mess)
+        {
+            recvGrContainer = new Guna2Panel();
+            recvGrPn = new Guna2GradientPanel();
+            recvGrLabel = new System.Windows.Forms.Label();
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.Controls.Add(recvGrContainer);
+                chatBoxPn.Controls.Add(recvGrContainer);
+                recvGrContainer.Controls.Add(recvGrPn);
+                recvGrContainer.Controls.Add(recvUnLabel);
+
+                recvUnLabel.AutoSize = true;
+                guna2Transition1.SetDecoration(recvUnLabel, Guna.UI2.AnimatorNS.DecorationType.None);
+                recvUnLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                recvUnLabel.ForeColor = System.Drawing.Color.White;
+                recvUnLabel.Location = new System.Drawing.Point(14, 0);
+                recvUnLabel.Name = "recvUnLabel";
+                recvUnLabel.Size = new System.Drawing.Size(44, 21);
+                recvUnLabel.TabIndex = 0;
+                recvUnLabel.Text = "Hello";
+
+                recvGrContainer.BringToFront();
+                guna2Transition1.SetDecoration(recvGrContainer, Guna.UI2.AnimatorNS.DecorationType.None);
+                recvGrContainer.Dock = System.Windows.Forms.DockStyle.Top;
+                recvGrContainer.Location = new System.Drawing.Point(0, 61);
+                recvGrContainer.Name = "recvContainer";
+                recvGrContainer.Size = new System.Drawing.Size(761, 81);
+                recvGrContainer.TabIndex = 1;
+                recvGrContainer.UseTransparentBackground = true;
+
+                recvGrPn.BorderRadius = 6;
+                recvGrPn.Controls.Add(recvLabel);
+                guna2Transition1.SetDecoration(recvGrLabel, Guna.UI2.AnimatorNS.DecorationType.None);
+                recvGrPn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+                recvGrPn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
+                recvGrPn.ForeColor = System.Drawing.Color.White;
+                recvGrPn.Location = new System.Drawing.Point(14, 20);
+                recvGrPn.Name = "recvPn";
+                recvGrPn.Size = new System.Drawing.Size(290, 46);
+                recvGrPn.TabIndex = 1;
+                recvGrPn.UseTransparentBackground = true;
+
+                recvGrLabel.AutoSize = true;
+                guna2Transition1.SetDecoration(recvGrLabel, Guna.UI2.AnimatorNS.DecorationType.None);
+                recvGrLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                recvGrLabel.ForeColor = System.Drawing.Color.Black;
+                recvGrLabel.Location = new System.Drawing.Point(19, 12);
+                recvGrLabel.Name = "recvLabel";
+                recvGrLabel.Size = new System.Drawing.Size(44, 21);
+                recvGrLabel.TabIndex = 0;
+                recvGrLabel.Text = mess;
+            });
+
+        }
+
         public void vonglap()
         {
             while (!thoat)
@@ -751,31 +813,10 @@ namespace ChatApplication
 
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            if (addGroupPanel.Visible == true)
-            {
-                addGroupPanel.Visible = false;
-            }
-            else if (chatPanel.Visible == true)
-            {
-                chatPanel.Visible = false;
-                chattingUnPn.Visible = false;
-                addGroupPanel.Visible = true;
-            }
-            else
-            {
-                addGroupPanel.Visible = true;
-            }
-            addGroupPanel.BringToFront();
-        }
-
         private void guna2Button5_Click(object sender, EventArgs e)
         {
             addGroupPanel.Visible = false;
         }
-
-       
 
         private void createImageSend()
         {
@@ -893,6 +934,49 @@ namespace ChatApplication
                 groupChatBtn.FillColor = Color.FromArgb( ((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
                 PanelTong.Controls.Clear();
             }
+        }
+
+        private void addNewGroupBtn_Click(object sender, EventArgs e)
+        {
+            addNewGr.Visible = false;
+        }
+
+        private void addGroupBtn_Click(object sender, EventArgs e)
+        {
+            if (addNewGr.Visible == true)
+            {
+                addNewGr.Visible = false;
+            }
+            else if (chatPanel.Visible == true)
+            {
+                chatPanel.Visible = false;
+                chattingUnPn.Visible = false;
+                addNewGr.Visible = true;
+            }
+            else
+            {
+                addNewGr.Visible = true;
+            }
+            addNewGr.BringToFront();
+        }
+
+        private void addMemberBtn_Click(object sender, EventArgs e)
+        {
+            if (addGroupPanel.Visible == true)
+            {
+                addGroupPanel.Visible = false;
+            }
+            else if (chatPanel.Visible == true)
+            {
+                chatPanel.Visible = false;
+                chattingUnPn.Visible = false;
+                addGroupPanel.Visible = true;
+            }
+            else
+            {
+                addGroupPanel.Visible = true;
+            }
+            addGroupPanel.BringToFront();
         }
     }
 }
