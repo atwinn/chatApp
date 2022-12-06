@@ -43,6 +43,7 @@
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.sendBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.emoji_list = new System.Windows.Forms.ListView();
             this.txtchatbox = new System.Windows.Forms.TextBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.closeBox = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -61,7 +62,9 @@
             this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.label_ten = new System.Windows.Forms.Label();
             this.logout = new System.Windows.Forms.PictureBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.addMemberBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.groupChatBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.addGroupBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
@@ -138,6 +141,7 @@
             this.chatPanel.Controls.Add(this.guna2PictureBox4);
             this.chatPanel.Controls.Add(this.guna2PictureBox3);
             this.chatPanel.Controls.Add(this.sendBtn);
+            this.chatPanel.Controls.Add(this.emoji_list);
             this.chatPanel.Controls.Add(this.txtchatbox);
             this.guna2Transition1.SetDecoration(this.chatPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.chatPanel.Location = new System.Drawing.Point(11, 47);
@@ -155,7 +159,7 @@
             this.chatBoxPn.Location = new System.Drawing.Point(0, 0);
             this.chatBoxPn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chatBoxPn.Name = "chatBoxPn";
-            this.chatBoxPn.Size = new System.Drawing.Size(870, 709);
+            this.chatBoxPn.Size = new System.Drawing.Size(761, 540);
             this.chatBoxPn.TabIndex = 8;
             this.chatBoxPn.UseTransparentBackground = true;
             // 
@@ -237,6 +241,18 @@
             this.sendBtn.Text = "Gửi tin nhắn";
             this.sendBtn.UseTransparentBackground = true;
             this.sendBtn.Click += new System.EventHandler(this.sendBtn_Click);
+            // 
+            // emoji_list
+            // 
+            this.emoji_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.emoji_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.guna2Transition1.SetDecoration(this.emoji_list, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.emoji_list.ForeColor = System.Drawing.Color.White;
+            this.emoji_list.Location = new System.Drawing.Point(0, 372);
+            this.emoji_list.Name = "emoji_list";
+            this.emoji_list.Size = new System.Drawing.Size(279, 157);
+            this.emoji_list.TabIndex = 0;
+            this.emoji_list.UseCompatibleStateImageBehavior = false;
             // 
             // txtchatbox
             // 
@@ -397,9 +413,8 @@
             // 
             this.guna2Transition1.SetDecoration(this.addChatPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.addChatPanel.Location = new System.Drawing.Point(0, 0);
-            this.addChatPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addChatPanel.Name = "addChatPanel";
-            this.addChatPanel.Size = new System.Drawing.Size(229, 133);
+            this.addChatPanel.Size = new System.Drawing.Size(200, 100);
             this.addChatPanel.TabIndex = 10;
             // 
             // guna2Button4
@@ -425,7 +440,7 @@
             this.guna2Transition1.SetDecoration(this.userName_Send, Guna.UI2.AnimatorNS.DecorationType.None);
             this.userName_Send.Location = new System.Drawing.Point(0, 0);
             this.userName_Send.Name = "userName_Send";
-            this.userName_Send.Size = new System.Drawing.Size(100, 27);
+            this.userName_Send.Size = new System.Drawing.Size(100, 23);
             this.userName_Send.TabIndex = 0;
             // 
             // tenUser
@@ -435,7 +450,9 @@
             this.tenUser.Controls.Add(this.btnReload);
             this.tenUser.Controls.Add(this.label_ten);
             this.tenUser.Controls.Add(this.logout);
-            this.tenUser.Controls.Add(this.guna2Button2);
+            this.tenUser.Controls.Add(this.addMemberBtn);
+            this.tenUser.Controls.Add(this.groupChatBtn);
+            this.tenUser.Controls.Add(this.addGroupBtn);
             this.tenUser.Controls.Add(this.guna2PictureBox2);
             this.guna2Transition1.SetDecoration(this.tenUser, Guna.UI2.AnimatorNS.DecorationType.None);
             this.tenUser.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -447,6 +464,7 @@
             // 
             // btnReload
             // 
+            this.btnReload.BorderRadius = 6;
             this.guna2Transition1.SetDecoration(this.btnReload, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -454,10 +472,10 @@
             this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnReload.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(195, 8);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReload.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.btnReload.Location = new System.Drawing.Point(18, 143);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(95, 52);
+            this.btnReload.Size = new System.Drawing.Size(107, 24);
             this.btnReload.TabIndex = 5;
             this.btnReload.Text = "Reload";
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
@@ -465,11 +483,13 @@
             // label_ten
             // 
             this.label_ten.AutoSize = true;
-            this.label_ten.BackColor = System.Drawing.Color.White;
+            this.label_ten.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.label_ten, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label_ten.Location = new System.Drawing.Point(43, 53);
+            this.label_ten.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_ten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.label_ten.Location = new System.Drawing.Point(67, 616);
             this.label_ten.Name = "label_ten";
-            this.label_ten.Size = new System.Drawing.Size(50, 20);
+            this.label_ten.Size = new System.Drawing.Size(76, 30);
             this.label_ten.TabIndex = 4;
             this.label_ten.Text = "label1";
             // 
@@ -486,29 +506,72 @@
             this.logout.TabStop = false;
             this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
-            // guna2Button2
+            // addMemberBtn
             // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.AnimatedGIF = true;
-            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.BorderThickness = 2;
-            this.guna2Transition1.SetDecoration(this.guna2Button2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
-            this.guna2Button2.Location = new System.Drawing.Point(21, 149);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(262, 49);
-            this.guna2Button2.TabIndex = 2;
-            this.guna2Button2.Text = "Thêm nhóm";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.addMemberBtn.Animated = true;
+            this.addMemberBtn.AnimatedGIF = true;
+            this.addMemberBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.addMemberBtn.BorderRadius = 10;
+            this.addMemberBtn.BorderThickness = 2;
+            this.guna2Transition1.SetDecoration(this.addMemberBtn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.addMemberBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.addMemberBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.addMemberBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.addMemberBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.addMemberBtn.FillColor = System.Drawing.Color.Transparent;
+            this.addMemberBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addMemberBtn.ForeColor = System.Drawing.Color.White;
+            this.addMemberBtn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
+            this.addMemberBtn.Location = new System.Drawing.Point(134, 103);
+            this.addMemberBtn.Name = "addMemberBtn";
+            this.addMemberBtn.Size = new System.Drawing.Size(107, 37);
+            this.addMemberBtn.TabIndex = 2;
+            this.addMemberBtn.Text = "Thêm thành viên";
+            // 
+            // groupChatBtn
+            // 
+            this.groupChatBtn.Animated = true;
+            this.groupChatBtn.AnimatedGIF = true;
+            this.groupChatBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.groupChatBtn.BorderRadius = 6;
+            this.guna2Transition1.SetDecoration(this.groupChatBtn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.groupChatBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.groupChatBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.groupChatBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.groupChatBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.groupChatBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.groupChatBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupChatBtn.ForeColor = System.Drawing.Color.White;
+            this.groupChatBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
+            this.groupChatBtn.Location = new System.Drawing.Point(134, 143);
+            this.groupChatBtn.Name = "groupChatBtn";
+            this.groupChatBtn.Size = new System.Drawing.Size(107, 24);
+            this.groupChatBtn.TabIndex = 2;
+            this.groupChatBtn.Text = "Chat nhóm";
+            this.groupChatBtn.Click += new System.EventHandler(this.groupChatBtn_Click);
+            // 
+            // addGroupBtn
+            // 
+            this.addGroupBtn.Animated = true;
+            this.addGroupBtn.AnimatedGIF = true;
+            this.addGroupBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.addGroupBtn.BorderRadius = 10;
+            this.addGroupBtn.BorderThickness = 2;
+            this.guna2Transition1.SetDecoration(this.addGroupBtn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.addGroupBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.addGroupBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.addGroupBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.addGroupBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.addGroupBtn.FillColor = System.Drawing.Color.Transparent;
+            this.addGroupBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addGroupBtn.ForeColor = System.Drawing.Color.White;
+            this.addGroupBtn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
+            this.addGroupBtn.Location = new System.Drawing.Point(18, 103);
+            this.addGroupBtn.Name = "addGroupBtn";
+            this.addGroupBtn.Size = new System.Drawing.Size(107, 37);
+            this.addGroupBtn.TabIndex = 2;
+            this.addGroupBtn.Text = "Thêm nhóm";
+            this.addGroupBtn.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2PictureBox2
             // 
@@ -611,7 +674,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox closeBox;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button addGroupBtn;
         private PictureBox logout;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
@@ -637,6 +700,8 @@
         public Label chattingUN;
         public Label label_ten;
         private Guna.UI2.WinForms.Guna2Button btnReload;
-        private ListView listViewIcon;
+        private Guna.UI2.WinForms.Guna2Button addMemberBtn;
+        private Guna.UI2.WinForms.Guna2Button groupChatBtn;
+        private ListView emoji_list;
     }
 }
