@@ -14,6 +14,7 @@ using System.Timers;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using System.Reflection;
 
 namespace ChatApplication
 {
@@ -56,8 +57,8 @@ namespace ChatApplication
         {
             InitializeComponent();
             PanelContainer();
-            //createUserPanel();
         }
+
         private void sendJson(object obj)
         {
             byte[] jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(obj);
@@ -111,7 +112,6 @@ namespace ChatApplication
                 sendChatLabel.Text = mess;
 
                 txtchatbox.Text = "";
-
             });
 
             //chatBoxPn.Controls.Add(sendContainer);
@@ -1025,24 +1025,6 @@ namespace ChatApplication
             MESSAGE.COMMON common = new MESSAGE.COMMON(11, "reload");
             sendJson(common);
         }
-        int originalExStyle = -1;
-        bool enableFormLevelDoubleBuffering = true;
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                if (originalExStyle == -1)
-                    originalExStyle = base.CreateParams.ExStyle;
-
-                CreateParams cp = base.CreateParams;
-                if (enableFormLevelDoubleBuffering)
-                    cp.ExStyle |= 0x02000000;  // WS_EX_COMPOSITED
-                else
-                    cp.ExStyle = originalExStyle;
-
-                return cp;
-            }
-        }
 
         private void guna2PictureBox3_Click(object sender, EventArgs e)
         {
@@ -1243,11 +1225,6 @@ namespace ChatApplication
                 addGroupPanel.Visible = true;
             }
             addGroupPanel.BringToFront();
-        }
-
-        private void chatBoxPn_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void emoji_list_MouseClick(object sender, MouseEventArgs e)

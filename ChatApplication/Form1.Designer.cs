@@ -234,7 +234,6 @@
             this.chatBoxPn.Size = new System.Drawing.Size(755, 503);
             this.chatBoxPn.TabIndex = 8;
             this.chatBoxPn.UseTransparentBackground = true;
-            this.chatBoxPn.Paint += new System.Windows.Forms.PaintEventHandler(this.chatBoxPn_Paint);
             // 
             // guna2PictureBox5
             // 
