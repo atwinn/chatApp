@@ -874,7 +874,8 @@ namespace server
                                     if (DSClient.Keys.Contains(obj.usernameReceiver))
                                     {
 
-                                        string path = "C:/Users/ad/Desktop/nhanFile_Server";
+                                        Directory.CreateDirectory("C:/NhanFileServer");
+                                        string path = "C:/NhanFileServer";
 
                                         byte[] clientData = new byte[1024 * 5000];
                                         clientData = obj.file;
@@ -919,7 +920,8 @@ namespace server
                                                 {
                                                     fileName = fileName.Substring(fileName.IndexOf("/") + 1);
                                                 }
-                                                string path = "C:/Users/ad/Desktop/nhanFile_Server";
+                                                Directory.CreateDirectory("C:/NhanFileServer");
+                                                string path = "C:/NhanFileServer";
                                                 BinaryWriter bWrite = new BinaryWriter(File.Open(path + "/" + fileName, FileMode.Create));
                                                 bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
                                                 bWrite.Close();
@@ -968,7 +970,8 @@ namespace server
                                     if (DSClient.Keys.Contains(obj.usernameReceiver))
                                     {
 
-                                        string path = "C:/Users/ad/Desktop/nhanFile_Server";
+                                        Directory.CreateDirectory("C:/NhanFileServer");
+                                                string path = "C:/NhanFileServer";
 
                                         byte[] clientData = new byte[1024 * 5000];
                                         clientData = obj.file;
@@ -1013,7 +1016,8 @@ namespace server
                                                 {
                                                     fileName = fileName.Substring(fileName.IndexOf("/") + 1);
                                                 }
-                                                string path = "C:/Users/ad/Desktop/nhanFile_Server";
+                                                Directory.CreateDirectory("C:/NhanFileServer");
+                                                string path = "C:/NhanFileServer";
                                                 BinaryWriter bWrite = new BinaryWriter(File.Open(path + "/" + fileName, FileMode.Create));
                                                 bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
                                                 bWrite.Close();

@@ -310,14 +310,15 @@ namespace ChatApplication
                                     chatBoxPn.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(imageContainer)));
                                     pathGui = "";
                                 }
-                                if (all_user == obj2.usernameReceiver)
+                                //if (all_user == obj2.usernameReceiver)
+                                else
                                 {
                                     if (MessageBox.Show(obj2.usernameSender + " đã gửi một file cho bạn , bạn có muốn nhận không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                     {
 
 
-
-                                        string path = "C:/Users/ad/Desktop/nhanFile_Client";
+                                        Directory.CreateDirectory("C:/NhanFileClient");
+                                        string path = "C:/NhanFileClient";
                                         byte[] clientData = new byte[1024 * 5000];
                                         clientData = obj2.file;
                                         int receivedBytesLen = clientData.Length;
@@ -332,7 +333,7 @@ namespace ChatApplication
                                         BinaryWriter bWrite = new BinaryWriter(File.Open(link, FileMode.Create));
                                         bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
                                         bWrite.Close();
-                                        createRecvView(obj2.usernameSender + " đã gửi cho bạn 1 file ảnh");
+                                        createRecvView(obj2.usernameSender + " đã gửi 1 file ảnh");
                                         createImageRecv(link);
                                         chatBoxPn.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(imageContainer2)));
                                         //chatBoxPn.ScrollControlIntoView(imageContainer2);
@@ -355,14 +356,13 @@ namespace ChatApplication
                                     //chatBoxPn.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(imageContainer)));
                                     nameFileGui = "";
                                 }
-                                if (all_user == obj2.usernameReceiver)
+                                else
                                 {
                                     if (MessageBox.Show(obj2.usernameSender + " đã gửi một file cho bạn , bạn có muốn nhận không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                     {
 
-
-
-                                        string path = "C:/Users/ad/Desktop/nhanFile_Client";
+                                        Directory.CreateDirectory("C:/NhanFileClient");
+                                        string path = "C:/NhanFileClient";
                                         byte[] clientData = new byte[1024 * 5000];
                                         clientData = obj2.file;
                                         int receivedBytesLen = clientData.Length;
@@ -377,8 +377,8 @@ namespace ChatApplication
                                         BinaryWriter bWrite = new BinaryWriter(File.Open(link, FileMode.Create));
                                         bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
                                         bWrite.Close();
-                                        createRecvView(obj2.usernameSender + " đã gửi cho bạn 1 file ");
-                                        createRecvView("File được lưu vào đường dẫn:"+path);
+                                        createRecvView(obj2.usernameSender + " đã gửi 1 file ");
+                                        createRecvView("File được lưu vào đường dẫn:"+link);
 
 
                                     }
