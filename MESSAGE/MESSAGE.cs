@@ -83,4 +83,16 @@ namespace MESSAGE
         public List<string>? DSClient { get; set; }
     }
 
+    public class NHOM
+    {
+        public NHOM(List<string>? group)
+        {
+            //this.GrpName = GrpName;
+            this.group = group;
+           
+        }
+        //public string? GrpName { get; set; }
+        public List<string>? group { get; set; }
+    }
+
 }

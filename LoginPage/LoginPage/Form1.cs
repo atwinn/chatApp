@@ -21,7 +21,7 @@ namespace LoginPage
         Socket client;
         bool thoat = false;
         Thread trd;
-        private string ipAdd = "127.0.0.1";
+        private string ipAdd = "192.168.1.44";
         public Form1()
         {
             InitializeComponent();
@@ -61,7 +61,7 @@ namespace LoginPage
                         form.thoat = thoat;
                         form.all_user = UserName.Text;
                         MESSAGE.DAU? obj = JsonSerializer.Deserialize<MESSAGE.DAU> (com.content);
-                        form.createUserPanel(obj.user,obj.DSClient);
+                        form.createUserPanel(obj.user,obj.DSClient, UserName.Text);
                         //MessageBox.Show(com.content);
                         //form.vonglap();
                         //form.Invoke((MethodInvoker)(() => form.Show()));

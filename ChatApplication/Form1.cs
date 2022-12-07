@@ -174,27 +174,18 @@ namespace ChatApplication
 
         }
 
-        private void createGroupRecvView(string mess)
+        private void createGroupRecvView(string mess,string nguoigui)
         {
             recvGrContainer = new Guna2Panel();
             recvGrPn = new Guna2GradientPanel();
             recvGrLabel = new System.Windows.Forms.Label();
+            recvUnLabel = new System.Windows.Forms.Label();
             this.Invoke((MethodInvoker)delegate
             {
                 this.Controls.Add(recvGrContainer);
                 chatBoxPn.Controls.Add(recvGrContainer);
                 recvGrContainer.Controls.Add(recvGrPn);
                 recvGrContainer.Controls.Add(recvUnLabel);
-
-                recvUnLabel.AutoSize = true;
-                guna2Transition1.SetDecoration(recvUnLabel, Guna.UI2.AnimatorNS.DecorationType.None);
-                recvUnLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-                recvUnLabel.ForeColor = System.Drawing.Color.White;
-                recvUnLabel.Location = new System.Drawing.Point(14, 0);
-                recvUnLabel.Name = "recvUnLabel";
-                recvUnLabel.Size = new System.Drawing.Size(44, 21);
-                recvUnLabel.TabIndex = 0;
-                recvUnLabel.Text = "Hello";
 
                 recvGrContainer.BringToFront();
                 guna2Transition1.SetDecoration(recvGrContainer, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -203,11 +194,22 @@ namespace ChatApplication
                 recvGrContainer.Location = new System.Drawing.Point(0, 61);
                 recvGrContainer.Name = "recvContainer";
                 recvGrContainer.Size = new System.Drawing.Size(761, 81);
+                recvGrContainer.Margin = new System.Windows.Forms.Padding(0, 30, 0, 0);
                 recvGrContainer.TabIndex = 1;
                 recvGrContainer.UseTransparentBackground = true;
 
+                guna2Transition1.SetDecoration(recvUnLabel, Guna.UI2.AnimatorNS.DecorationType.None);
+                recvUnLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                recvUnLabel.ForeColor = System.Drawing.Color.White;
+                recvUnLabel.Location = new System.Drawing.Point(14, 0);
+                recvUnLabel.Name = "recvUnLabel";
+                recvUnLabel.Size = new System.Drawing.Size(44, 21);
+                recvUnLabel.AutoSize = true;
+                recvUnLabel.TabIndex = 0;
+                recvUnLabel.Text = nguoigui;
+
                 recvGrPn.BorderRadius = 6;
-                recvGrPn.Controls.Add(recvLabel);
+                recvGrPn.Controls.Add(recvGrLabel);
                 guna2Transition1.SetDecoration(recvGrLabel, Guna.UI2.AnimatorNS.DecorationType.None);
                 recvGrPn.AutoSize = true;
                 recvGrPn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -262,7 +264,7 @@ namespace ChatApplication
                                 }
                                 else
                                 {
-                                    createRecvView(mes.content);
+                                    createGroupRecvView(mes.content, mes.usernameSender);
                                     this.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(recvContainer)));
                                 }
                             }
@@ -385,6 +387,13 @@ namespace ChatApplication
                             }
 
                             break;
+                        case 15:
+                            {
+                                MESSAGE.NHOM? obj = JsonSerializer.Deserialize<MESSAGE.NHOM>(com.content);
+                                createGroupPanel_thread(obj.group);
+                            }
+
+                            break;
 
                     }
 
@@ -411,12 +420,14 @@ namespace ChatApplication
             PanelTong.TabIndex = 4;
         }
 
-        public void createUserPanel(List<string> DS_member, List<string> DSClient)
+        public void createUserPanel(List<string> DS_member, List<string> DSClient, string user_name)
         {
 
             int x = 0;
+            
             foreach (string s in DS_member)
             {
+                if (user_name == s) continue;
                 if (DSClient.Contains(s))
                 {
                     userPn = new Guna.UI2.WinForms.Guna2Panel();
@@ -721,6 +732,93 @@ namespace ChatApplication
 
             }
         }
+        public void createGroupPanel_thread(List<string> DS_member)
+        {
+
+            int x = 0;
+            foreach (string s in DS_member)
+            {
+                
+                    userPn = new Guna.UI2.WinForms.Guna2Panel();
+
+
+                    this.Invoke((MethodInvoker)delegate
+                    {
+
+                        this.Controls.Add(userPn);
+                        PanelTong.Controls.Add(userPn);
+                        label2 = new System.Windows.Forms.Label();
+                        guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+                        circle = new Guna.UI2.WinForms.Guna2Shapes();
+                        //Hình tròn trạng thái
+                        circle.BorderThickness = 0;
+                        guna2Transition1.SetDecoration(circle, Guna.UI2.AnimatorNS.DecorationType.None);
+                        circle.BackColor = System.Drawing.Color.Transparent;
+                        circle.FillColor = System.Drawing.Color.Lime;
+                        circle.Location = new System.Drawing.Point(50, 7);
+                        circle.Name = "guna2Shapes1" + s;
+                        circle.PolygonSkip = 1;
+                        circle.Rotate = 0F;
+                        circle.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse;
+                        circle.Size = new System.Drawing.Size(18, 18);
+                        circle.TabIndex = 4;
+                        circle.Text = "guna2Shapes1";
+                        circle.Zoom = 80;
+                        circle.UseTransparentBackground = true;
+                        //Tên hiển thị
+                        label2.AutoSize = true;
+                        label2.BackColor = System.Drawing.Color.Transparent;
+                        guna2Transition1.SetDecoration(label2, Guna.UI2.AnimatorNS.DecorationType.None);
+                        label2.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+                        label2.ForeColor = System.Drawing.Color.White;
+                        label2.Location = new System.Drawing.Point(80, 20);
+                        label2.Name = "label2" + s;
+                        label2.Size = new System.Drawing.Size(116, 25);
+                        label2.TabIndex = 0;
+                        label2.Text = s;
+                        label2.Click += new System.EventHandler((sender, e) => this.userPn_Click(sender, e, s));
+                        //label2.Click += new System.EventHandler(this.userPn_Click);
+                        //Hình hiển thị
+                        guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+                        guna2Transition1.SetDecoration(guna2CirclePictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
+                        guna2CirclePictureBox1.Image = global::ChatApplication.Properties.Resources._274242879_916713445688196_4178666346407724582_n;
+                        guna2CirclePictureBox1.ImageRotate = 0F;
+                        guna2CirclePictureBox1.Location = new System.Drawing.Point(17, 9);
+                        guna2CirclePictureBox1.Name = "guna2CirclePictureBox1" + s;
+                        guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+                        guna2CirclePictureBox1.Size = new System.Drawing.Size(47, 46);
+                        guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                        guna2CirclePictureBox1.TabIndex = 1;
+                        guna2CirclePictureBox1.TabStop = false;
+                        guna2CirclePictureBox1.UseTransparentBackground = true;
+                        guna2CirclePictureBox1.Click += new System.EventHandler((sender, e) => this.userPn_Click(sender, e, s));
+                        //guna2CirclePictureBox1.Click += new System.EventHandler(this.userPn_Click);
+                        //Bộ khung
+                        //userPn.BringToFront();
+                        userPn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+                        userPn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+                        userPn.BorderRadius = 15;
+                        userPn.BorderThickness = 2;
+                        userPn.Controls.Add(label2);
+                        userPn.Controls.Add(circle);
+                        userPn.Controls.Add(guna2CirclePictureBox1);
+                        guna2Transition1.SetDecoration(userPn, Guna.UI2.AnimatorNS.DecorationType.None);
+                        userPn.Location = new System.Drawing.Point(18, x);
+                        x += 80;
+                        userPn.Name = "userPn" + s;
+                        userPn.Size = new System.Drawing.Size(215, 64);
+                        userPn.TabIndex = 5;
+                        userPn.Click += new System.EventHandler((sender, e) => this.userPn_Click(sender, e, s));
+                        //userPn.Click += new System.EventHandler(this.userPn_Click);
+                        //chattingUN.Text = s;
+                    });
+
+
+                
+                
+
+            }
+        }
 
         public void createGroupPanel_thread(List<string> DS_member, List<string> DSClient)
         {
@@ -925,6 +1023,17 @@ namespace ChatApplication
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
+           
+
+            String[] mang = textBox3.Text.Split(",");
+            List<string> l = new List<string>();
+            foreach (string user in mang)
+                l.Add(user);
+            MESSAGE.ADDNHOM mes = new MESSAGE.ADDNHOM(textBox2.Text, l);
+            //var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = JsonSerializer.Serialize(mes);
+            MESSAGE.COMMON common = new MESSAGE.COMMON(7, jsonString);
+            sendJson(common);
             addGroupPanel.Visible = false;
         }
 
@@ -1022,7 +1131,7 @@ namespace ChatApplication
         {
 
             PanelTong.Controls.Clear();
-            MESSAGE.COMMON common = new MESSAGE.COMMON(11, "reload");
+            MESSAGE.COMMON common = new MESSAGE.COMMON(11, all_user);
             sendJson(common);
         }
         int originalExStyle = -1;
@@ -1189,21 +1298,30 @@ namespace ChatApplication
 
         private void groupChatBtn_Click(object sender, EventArgs e)
         {
-            if (groupChatBtn.FillColor == Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137))))))
+            if (groupChatBtn.FillColor == Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))))) //hồng
             {
-                groupChatBtn.FillColor = Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228)))));
+                groupChatBtn.FillColor = Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(103)))), ((int)(((byte)(228))))); //xanh
                 PanelTong.Controls.Clear();
+
+                MESSAGE.COMMON common = new MESSAGE.COMMON(12, all_user);
+                sendJson(common);
+
                 //createGroupPanel_thread();
             }
             else
             {
                 groupChatBtn.FillColor = Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
                 PanelTong.Controls.Clear();
+                MESSAGE.COMMON common = new MESSAGE.COMMON(11, all_user);
+                sendJson(common);
             }
         }
 
         private void addNewGroupBtn_Click(object sender, EventArgs e)
         {
+            MESSAGE.COMMON common = new MESSAGE.COMMON(6, newGrName.Text);
+            sendJson(common);
+
             addNewGr.Visible = false;
         }
 
@@ -1224,6 +1342,11 @@ namespace ChatApplication
                 addNewGr.Visible = true;
             }
             addNewGr.BringToFront();
+
+            
+
+
+
         }
 
         private void addMemberBtn_Click(object sender, EventArgs e)

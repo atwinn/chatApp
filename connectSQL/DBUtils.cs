@@ -10,7 +10,7 @@ namespace connectSQL
     {
         public static SqlConnection GetDBConnection()
         {
-            string datasource = @"ATWINN\ATWINN";
+            string datasource = @"LUAN\SQLEXPRESS";
 
             string database = "chat";
             string username = "sa";

@@ -84,7 +84,7 @@ namespace server
             return DS_member;
         }
 
-        private List<string> getUserChat()
+        private List<string> getUserChat(string user_name)
         {
 
             List<string> DS_member = new List<string>();
@@ -94,7 +94,7 @@ namespace server
             conn.Open();
             try
             {
-                string sql = "Select * from Users";
+                string sql = "Select * from Users where username <> '"+ user_name + "'";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = sql;
@@ -133,6 +133,57 @@ namespace server
                 conn.Dispose();
             }
             return DS_member;
+        }
+
+        private List<string> getGroupChat(string group_name)
+        {
+
+            List<string> DS_group = new List<string>();
+            //DSNhom = new List<string>();
+            //DSNhom = new Dictionary<string, List<string>>();
+            SqlConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
+            try
+            {
+                string sql = "select * from Group_member where username = '"+group_name+"'";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                //DS = new List<USER>();
+
+                using (DbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+
+                        while (reader.Read())
+                        {
+                            //int group_id = reader.GetInt16(0);
+                            string username = reader.GetString(0);
+
+                            DS_group.Add(username);
+                            //var user = new USER(username, password, name);
+
+                            // DS.Add(user);
+
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+                Console.WriteLine(ex.StackTrace);
+            }
+            finally
+            {
+                // Đóng kết nối.
+                conn.Close();
+                // Hủy đối tượng, giải phóng tài nguyên.
+                conn.Dispose();
+            }
+            return DS_group;
         }
         private void getAllGroup()
         {
@@ -591,7 +642,7 @@ namespace server
                                         strings.Add(item.Key);
                                     }
                                         
-                                    MESSAGE.DAU dau = new MESSAGE.DAU(getUserChat(), strings);
+                                    MESSAGE.DAU dau = new MESSAGE.DAU(getUserChat(com.content), strings);
                                     //var options = new JsonSerializerOptions { WriteIndented = true };
                                     string jsonString1 = JsonSerializer.Serialize(dau);
                                     
@@ -698,8 +749,7 @@ namespace server
                                             friend.Send(data, recv, SocketFlags.None);
                                             my.Send(data, recv, SocketFlags.None);
                                         }    
-                                        }
-                                    }
+                                     }
                                     else//Nhom
                                     {
                                         if (DSNhom.Keys.Contains(mes.usernameReceiver))
@@ -708,13 +758,19 @@ namespace server
                                             {
                                                 AppendTextBox(mes.usernameSender + " send to " + mes.usernameReceiver + " content: " + mes.content + Environment.NewLine);
                                                 send_message_group(mes.usernameSender, mes.usernameReceiver, mes.content);
+                                                //string response = mes.usernameSender + ": " + mes.content;
+                                                //byte[] jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(response);
                                                 foreach (String user in DSNhom[mes.usernameReceiver])
                                                 {
                                                     if (DSClient.Keys.Contains(user))
                                                     {
-
+                                                        
                                                         Socket friend = DSClient[user];
                                                         friend.Send(data, recv, SocketFlags.None);
+                                                        //MESSAGE.MESSAGE? mes1 = new MESSAGE.MESSAGE(mes.usernameSender, user,response);
+                                                        //string jsonString1 = JsonSerializer.Serialize(mes1);
+                                                        //com = new COMMON(2, jsonString1);
+                                                        //sendJson(friend, com);
 
 
                                                     }
@@ -733,6 +789,8 @@ namespace server
                                         }
 
                                     }
+                                }
+                                   
                                 break;
                             case 4:
                                 {
@@ -1007,7 +1065,7 @@ namespace server
                                             strings.Add(item.Key);
                                         }
 
-                                        MESSAGE.DAU dau = new MESSAGE.DAU(getUserChat(), strings);
+                                        MESSAGE.DAU dau = new MESSAGE.DAU(getUserChat(com.content), strings);
                                         //var options = new JsonSerializerOptions { WriteIndented = true };
                                         string jsonString1 = JsonSerializer.Serialize(dau);
 
@@ -1018,6 +1076,24 @@ namespace server
                                         sendJson(client, com);
                                         
                                     
+                                    break;
+                                }
+                                case 12: //load nhom
+                                {
+
+                                    
+
+                                    MESSAGE.NHOM nhom = new MESSAGE.NHOM(getGroupChat(com.content));
+                                    //var options = new JsonSerializerOptions { WriteIndented = true };
+                                    string jsonString1 = JsonSerializer.Serialize(nhom);
+
+
+
+
+                                    com = new COMMON(15, jsonString1);
+                                    sendJson(client, com);
+
+
                                     break;
                                 }
 
