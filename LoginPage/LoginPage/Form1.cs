@@ -21,7 +21,7 @@ namespace LoginPage
         Socket client;
         bool thoat = false;
         Thread trd;
-        private string ipAdd = "192.168.1.127";
+        private string ipAdd = "192.168.1.52";
         public Form1()
         {
             InitializeComponent();
@@ -51,7 +51,14 @@ namespace LoginPage
                 {
                     if (com.content != null)
                     {
-                       
+                        if (com.content == "CANCEL")
+                        {
+                            MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác");
+                            //msg_pn.Visible = true;
+                           // msg_pn.Text = "Tài khoản hoặc mật khẩu không chính xác";
+                           
+                            return;
+                        }    
                        // MessageBox.Show("Login success!");
                         ChatApplication.Form1 form = new ChatApplication.Form1();
                         this.Invoke((MethodInvoker)(() => this.Hide()));
