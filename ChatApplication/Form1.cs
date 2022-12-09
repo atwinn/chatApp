@@ -1197,6 +1197,7 @@ namespace ChatApplication
             OpenFileDialog openFileDialog = new OpenFileDialog();
             Thread t = new Thread((ThreadStart)(() =>
             {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string filePath = openFileDialog.FileName;
