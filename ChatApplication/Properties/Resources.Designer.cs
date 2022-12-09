@@ -63,6 +63,16 @@ namespace ChatApplication.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _149071 {
+            get {
+                object obj = ResourceManager.GetObject("149071", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _243994297_3044625389138141_6855380035217392503_n {
             get {
                 object obj = ResourceManager.GetObject("243994297_3044625389138141_6855380035217392503_n", resourceCulture);

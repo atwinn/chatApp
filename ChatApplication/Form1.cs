@@ -469,7 +469,7 @@ namespace ChatApplication
                     //Hình hiển thị
                     guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
                     guna2Transition1.SetDecoration(guna2CirclePictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-                    guna2CirclePictureBox1.Image = global::ChatApplication.Properties.Resources._274242879_916713445688196_4178666346407724582_n;
+                    guna2CirclePictureBox1.Image = global::ChatApplication.Properties.Resources._149071;
                     guna2CirclePictureBox1.ImageRotate = 0F;
                     guna2CirclePictureBox1.Location = new System.Drawing.Point(17, 9);
                     guna2CirclePictureBox1.Name = "guna2CirclePictureBox1" + s;
@@ -539,7 +539,7 @@ namespace ChatApplication
                     //Hình hiển thị
                     guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
                     guna2Transition1.SetDecoration(guna2CirclePictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-                    guna2CirclePictureBox1.Image = global::ChatApplication.Properties.Resources._274242879_916713445688196_4178666346407724582_n;
+                    guna2CirclePictureBox1.Image = global::ChatApplication.Properties.Resources._149071;
                     guna2CirclePictureBox1.ImageRotate = 0F;
                     guna2CirclePictureBox1.Location = new System.Drawing.Point(17, 9);
                     guna2CirclePictureBox1.Name = "guna2CirclePictureBox1" + s;
@@ -623,7 +623,7 @@ namespace ChatApplication
                         //Hình hiển thị
                         guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
                         guna2Transition1.SetDecoration(guna2CirclePictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-                        guna2CirclePictureBox1.Image = global::ChatApplication.Properties.Resources._274242879_916713445688196_4178666346407724582_n;
+                        guna2CirclePictureBox1.Image = global::ChatApplication.Properties.Resources._149071;
                         guna2CirclePictureBox1.ImageRotate = 0F;
                         guna2CirclePictureBox1.Location = new System.Drawing.Point(17, 9);
                         guna2CirclePictureBox1.Name = "guna2CirclePictureBox1" + s;
@@ -699,7 +699,7 @@ namespace ChatApplication
                         //Hình hiển thị
                         guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
                         guna2Transition1.SetDecoration(guna2CirclePictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-                        guna2CirclePictureBox1.Image = global::ChatApplication.Properties.Resources._274242879_916713445688196_4178666346407724582_n;
+                        guna2CirclePictureBox1.Image = global::ChatApplication.Properties.Resources._149071;
                         guna2CirclePictureBox1.ImageRotate = 0F;
                         guna2CirclePictureBox1.Location = new System.Drawing.Point(17, 9);
                         guna2CirclePictureBox1.Name = "guna2CirclePictureBox1" + s;
@@ -782,7 +782,7 @@ namespace ChatApplication
                         //Hình hiển thị
                         guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
                         guna2Transition1.SetDecoration(guna2CirclePictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-                        guna2CirclePictureBox1.Image = global::ChatApplication.Properties.Resources._274242879_916713445688196_4178666346407724582_n;
+                        guna2CirclePictureBox1.Image = global::ChatApplication.Properties.Resources._149071;
                         guna2CirclePictureBox1.ImageRotate = 0F;
                         guna2CirclePictureBox1.Location = new System.Drawing.Point(17, 9);
                         guna2CirclePictureBox1.Name = "guna2CirclePictureBox1" + s;
@@ -871,7 +871,7 @@ namespace ChatApplication
                         //Hình hiển thị
                         groupPic.BackColor = System.Drawing.Color.Transparent;
                         guna2Transition1.SetDecoration(groupPic, Guna.UI2.AnimatorNS.DecorationType.None);
-                        groupPic.Image = global::ChatApplication.Properties.Resources._274242879_916713445688196_4178666346407724582_n;
+                        groupPic.Image = global::ChatApplication.Properties.Resources._149071;
                         groupPic.ImageRotate = 0F;
                         groupPic.Location = new System.Drawing.Point(17, 9);
                         groupPic.Name = "guna2CirclePictureBox1" + s;
@@ -946,7 +946,7 @@ namespace ChatApplication
                         //Hình hiển thị
                         groupPic.BackColor = System.Drawing.Color.Transparent;
                         guna2Transition1.SetDecoration(groupPic, Guna.UI2.AnimatorNS.DecorationType.None);
-                        groupPic.Image = global::ChatApplication.Properties.Resources._274242879_916713445688196_4178666346407724582_n;
+                        groupPic.Image = global::ChatApplication.Properties.Resources._149071;
                         groupPic.ImageRotate = 0F;
                         groupPic.Location = new System.Drawing.Point(17, 9);
                         groupPic.Name = "guna2CirclePictureBox1" + s;
