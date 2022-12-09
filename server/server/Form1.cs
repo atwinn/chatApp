@@ -619,7 +619,7 @@ namespace server
         }
         private void ThreadClient(Socket client)
         {
-            byte[] data = new byte[1024 * 5000];
+            byte[] data = new byte[1024 * 5000 * 10];
             int recv = client.Receive(data);
             if (recv == 0) return;
             string jsonString = Encoding.ASCII.GetString(data, 0, recv);
