@@ -257,13 +257,16 @@ namespace ChatApplication
                         case 2:
                             {
                                 MESSAGE.MESSAGE? mes = JsonSerializer.Deserialize<MESSAGE.MESSAGE>(com.content);
+                                
                                 if (all_user == mes.usernameSender)
                                 {
+                                    
                                     createSendView(mes.content);
                                     this.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(sendContainer)));
                                 }
                                 else
                                 {
+                                    if (mes.usernameSender != chattingUN.Text) break;
                                     createGroupRecvView(mes.content, mes.usernameSender);
                                     this.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(recvContainer)));
                                 }
