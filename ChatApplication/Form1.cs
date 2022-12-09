@@ -1001,6 +1001,9 @@ namespace ChatApplication
 
         private void closeBox_Click(object sender, EventArgs e)
         {
+            MESSAGE.COMMON common = new MESSAGE.COMMON(4, all_user);
+            sendJson(common);
+            thoat = true;
             Form frm = Application.OpenForms["Form1"];
             frm.Invoke((MethodInvoker)(() => frm.Close()));
         }
