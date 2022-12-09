@@ -265,8 +265,7 @@ namespace ChatApplication
                                     this.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(sendContainer)));
                                 }
                                 else
-                                {
-                                    if (mes.usernameSender != chattingUN.Text) break;
+                                {  
                                     createGroupRecvView(mes.content, mes.usernameSender);
                                     this.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(recvContainer)));
                                 }
