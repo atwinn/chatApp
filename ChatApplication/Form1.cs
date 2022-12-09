@@ -379,6 +379,7 @@ namespace ChatApplication
                                         bWrite.Close();
                                         createRecvView(obj2.usernameSender + " đã gửi 1 file ");
                                         createRecvView("File được lưu vào đường dẫn:"+link);
+                                        this.Invoke((MethodInvoker)(() => chatBoxPn.ScrollControlIntoView(recvContainer)));
 
 
                                     }

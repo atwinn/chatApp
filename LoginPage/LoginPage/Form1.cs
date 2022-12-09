@@ -21,7 +21,7 @@ namespace LoginPage
         Socket client;
         bool thoat = false;
         Thread trd;
-        private string ipAdd = "192.168.1.52";
+        private string ipAdd = "192.168.141.85";
         public Form1()
         {
             InitializeComponent();
