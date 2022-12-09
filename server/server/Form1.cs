@@ -1181,6 +1181,11 @@ namespace server
             }
             Console.Read();
         }
+
+        private void Stop_Click(object sender, EventArgs e)
+        {
+            server.Close();
+        }
     }
 
 

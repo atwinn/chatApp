@@ -35,13 +35,12 @@
             this.Start = new System.Windows.Forms.Button();
             this.KQ = new System.Windows.Forms.TextBox();
             this.Stop = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // IP
             // 
             this.IP.Location = new System.Drawing.Point(105, 16);
-            this.IP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.IP.Margin = new System.Windows.Forms.Padding(2);
             this.IP.Name = "IP";
             this.IP.Size = new System.Drawing.Size(135, 23);
             this.IP.TabIndex = 0;
@@ -59,7 +58,7 @@
             // PORT
             // 
             this.PORT.Location = new System.Drawing.Point(289, 16);
-            this.PORT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PORT.Margin = new System.Windows.Forms.Padding(2);
             this.PORT.Name = "PORT";
             this.PORT.Size = new System.Drawing.Size(47, 23);
             this.PORT.TabIndex = 0;
@@ -78,7 +77,7 @@
             // Start
             // 
             this.Start.Location = new System.Drawing.Point(31, 56);
-            this.Start.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Start.Margin = new System.Windows.Forms.Padding(2);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(78, 20);
             this.Start.TabIndex = 2;
@@ -89,7 +88,7 @@
             // KQ
             // 
             this.KQ.Location = new System.Drawing.Point(24, 100);
-            this.KQ.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.KQ.Margin = new System.Windows.Forms.Padding(2);
             this.KQ.Multiline = true;
             this.KQ.Name = "KQ";
             this.KQ.Size = new System.Drawing.Size(312, 140);
@@ -98,29 +97,19 @@
             // Stop
             // 
             this.Stop.Location = new System.Drawing.Point(160, 56);
-            this.Stop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Stop.Margin = new System.Windows.Forms.Padding(2);
             this.Stop.Name = "Stop";
             this.Stop.Size = new System.Drawing.Size(78, 20);
             this.Stop.TabIndex = 3;
             this.Stop.Text = "Stop";
             this.Stop.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(261, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Stop.Click += new System.EventHandler(this.Stop_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 270);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Stop);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.label2);
@@ -128,7 +117,7 @@
             this.Controls.Add(this.KQ);
             this.Controls.Add(this.PORT);
             this.Controls.Add(this.IP);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -147,6 +136,5 @@
         private Button Start;
         private TextBox KQ;
         private Button Stop;
-        private Button button1;
     }
 }
